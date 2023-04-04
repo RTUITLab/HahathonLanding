@@ -234,7 +234,8 @@ a {
 }
 
 .icon {
-	&.vk {
+	&.vkPlay,
+	&.vkEducation {
 		transition: filter 0.2s;
 		filter: grayscale(1);
 		&:hover {

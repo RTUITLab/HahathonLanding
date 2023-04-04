@@ -2,13 +2,13 @@
   var curriculums_data = [
   {
     "stage": "Публикация заданий",
-    "date": "18.10.2022 20:00",
+    "date": "15.04.2023 20:00",
   },{
     "stage": "Завершение приёма решений",
-    "date": "21.10.2022 09:00",
+    "date": "23.04.2023 23:59",
   },{
     "stage": "Публикация результатов",
-    "date": "21.10.2022 20:00",
+    "date": "28.04.2023 20:00",
   }]
   
 mixin curriculum-block(data)
@@ -38,16 +38,26 @@ header.header
   .header__main
     .title
       .title__icons
-        img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
+        a(href="https://vkplay.ru/" target='_blank')
+          img.icon#header-icon.vkPlay(src="./assets/logos/VKPlay_hover.svg"  alt="Логотип VK Игры" width="120px")
         span X
-        img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
-      h1.title__header Хакатон
-      span.title__date 18.10 — 21.10
+        a(href="https://education.vk.company/" target='_blank')
+          img.icon#header-icon.vkEducation(src="./assets/logos/VKEducation_hover.svg"  alt="Логотип VK Education" width="160px")
+        span X 
+        a(href="https://www.mirea.ru/" target='_blank')
+          img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px")
+      h1.title__header Хахатон
+      span.title__date 15.04-23.04
       a.button.title__button(href="#registration-section") Зарегистрироваться
     .curriculum
       each curriculum in curriculums_data
         +curriculum-block(curriculum)
     .title__icons-mobile
-      img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
+      a(href="https://vkplay.ru/" target='_blank')
+        img.icon#header-icon.vkPlay(src="./assets/logos/VKPlay_hover.svg"  alt="Логотип VK Игры" width="120px")
       span X
-      img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
+      a(href="https://education.vk.company/" target='_blank')
+        img.icon#header-icon.vkEducation(src="./assets/logos/VKEducation_hover.svg" alt="Логотип VK Education" width="160px")
+      span X
+      a(href="https://www.mirea.ru/" target='_blank')
+        img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp" alt="Логотип РТУ МИРЭА" width="60px" height="60px")
