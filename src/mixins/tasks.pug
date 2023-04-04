@@ -4,8 +4,8 @@
     "title": "Кейс от Института ИТ и VK Play",
     "winner": "",
     "description": "Простая, но вовлекающая игра-органайзер",
-    "task": "11-й день рождения VK образования",
-    "imgSrc": "assets/tasks/task_1.webp",
+    "task": "",
+    "imgSrc": "assets/tasks/smiley_face.svg",
     "height": "343px",
     "width": "440px",
     "radioId": "task1"
@@ -14,10 +14,9 @@
     "title": "Кейс от VK Play и Института ИТ",
     "winner": "",
     "description": "Простая, но вовлекающая игра-квест",
-    "task": "11-й день рождения VK образования",
-    "imgSrc": "assets/tasks/vk.webp",
-    "height": "343px",
-    "width": "440px",
+    "task": "",
+    "imgSrc": "assets/tasks/worker.svg",
+    "width": "200px",
     "radioId": "task2"
   }] 
 
@@ -29,8 +28,8 @@ mixin task(data)
     div.rows
       //- p.winner Победитель: 
       //-   = data.winner
-      p.theme Тема: 
-        = data.theme
+      //- p.task Задача: 
+      //-   = data.task
     img(src=data.imgSrc alt="Иконка с подарком" width=data.width height=data.height)
     div
       label(for=data.radioId)

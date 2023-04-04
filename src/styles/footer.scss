@@ -65,6 +65,12 @@ footer {
 		justify-content: center;
 		align-items: center;
 		gap: 130px;
+		@media (max-width: $mobile-breakpoint) {
+			flex-direction: column;
+			gap: 20px;
+			border-top: 1px solid grey;
+			padding-top: 45px;
+		}
 	}
 }
 
