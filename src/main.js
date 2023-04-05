@@ -34,7 +34,7 @@ globalThis.onSubmit = (token) => {
 		return false
 	}
 	getById('error__reg').innerText = ''
-	let members = [],
+	let members = [{}, {}, {}, {}],
 		members_count = +getById('team-length').value
 	for (let i = 1; i <= members_count; i++) {
 		members.push({
@@ -45,7 +45,7 @@ globalThis.onSubmit = (token) => {
 			school: getById(`memeber-${i}-institute`).value,
 		})
 	}
-	res = { data: { title: getById('team-name').value, members_count, members } }
+	const res = { data: { title: getById('team-name').value, members_count, members: [members[0]], member2: [members[1]], member3: [members[2]], member4: [members[3]] } }
 	console.log(res)
 	fetch('https://hahaton-mirea.ru/api/teams', {
 		//window.location.origin + '/team', {
