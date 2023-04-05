@@ -36,14 +36,14 @@ globalThis.onSubmit = (token) => {
 	getById('error__reg').innerText = ''
 	let members = [{}, {}, {}, {}],
 		members_count = +getById('team-length').value
-	for (let i = 1; i <= members_count; i++) {
-		members.push({
+	for (let i = 0; i < members_count; i++) {
+		members[i] = {
 			name: getById(`memeber-${i}`).value,
 			email: getById(`memeber-${i}-email`).value,
 			tg: getById(`memeber-${i}-telegram`).value,
 			age: +getById(`memeber-${i}-age`).value,
 			school: getById(`memeber-${i}-institute`).value,
-		})
+		}
 	}
 	const res = { data: { title: getById('team-name').value, members_count, members: [members[0]], member2: [members[1]], member3: [members[2]], member4: [members[3]] } }
 	console.log(res)
