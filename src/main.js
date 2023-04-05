@@ -48,6 +48,7 @@ globalThis.onSubmit = (token) => {
 	const res = {
 		data: {
 			title: getById('team-name').value,
+			task: +document.querySelector('#register input[name="track"]:checked').value,
 			members_count,
 			members: [members[0]],
 			member2: [members[1]],
@@ -55,9 +56,9 @@ globalThis.onSubmit = (token) => {
 			member4: [members[3]],
 		},
 	}
-	console.log(res)
+	// console.log(+document.querySelector('#register input[name="track"]:checked').value, res)
 	fetch('https://hahaton-mirea.ru/api/teams', {
-		//window.location.origin + '/team', {
+		//window.location.origin + '/api/teams', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -65,21 +66,6 @@ globalThis.onSubmit = (token) => {
 				'Bearer bf4207c09f80469dadb2054eea9ec54f8177bcf60cd74d225548063d6527d2ca8bb9d24bd0306c7ba26034f4ed3c29cc3cc89b10b53dba0cdb4be10a0f59faa49719e0c182364ee4cd84fa3a7bf604cdbbb39bedffa8a96a39298d52f7d3605bd655041c4415caa90b47f27d80d434e8ffd1b3c93c2305f10f032179c90584cd',
 		},
 		body: JSON.stringify(res),
-		// body: JSON.stringify({
-		// 	age_1: getById('memeber-1-age').value,
-		// 	age_2: getById('memeber-2-age').value,
-		// 	fio_1: getById('memeber-1').value,
-		// 	fio_2: getById('memeber-2').value,
-		// 	univercity_1: getById('memeber-1-institute').value,
-		// 	univercity_2: getById('memeber-2-institute').value,
-		// 	tg_1: getById('memeber-1-telegram').value,
-		// 	tg_2: getById('memeber-2-telegram').value,
-		// 	team_name: getById('team-name').value,
-		// 	email_1: getById('memeber-1-email').value,
-		// 	email_2: getById('memeber-2-email').value,
-		// 	case_number: document.querySelector('#register input[name="track"]:checked').value,
-		// 	recaptcha: token,
-		// }),
 	})
 		.then(() => {
 			console.log('form sent')
