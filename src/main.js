@@ -34,26 +34,43 @@ globalThis.onSubmit = (token) => {
 		return false
 	}
 	getById('error__reg').innerText = ''
-	fetch(window.location.origin + '/team', {
+	let members = [],
+		members_count = +getById('team-length').value
+	for (let i = 1; i <= members_count; i++) {
+		members.push({
+			name: getById(`memeber-${i}`).value,
+			email: getById(`memeber-${i}-email`).value,
+			tg: getById(`memeber-${i}-telegram`).value,
+			age: +getById(`memeber-${i}-age`).value,
+			school: getById(`memeber-${i}-institute`).value,
+		})
+	}
+	res = { data: { title: getById('team-name').value, members_count, members } }
+	console.log(res)
+	fetch('https://hahaton-mirea.ru/api/teams', {
+		//window.location.origin + '/team', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
+			Authorization:
+				'Bearer bf4207c09f80469dadb2054eea9ec54f8177bcf60cd74d225548063d6527d2ca8bb9d24bd0306c7ba26034f4ed3c29cc3cc89b10b53dba0cdb4be10a0f59faa49719e0c182364ee4cd84fa3a7bf604cdbbb39bedffa8a96a39298d52f7d3605bd655041c4415caa90b47f27d80d434e8ffd1b3c93c2305f10f032179c90584cd',
 		},
-		body: JSON.stringify({
-			age_1: getById('memeber-1-age').value,
-			age_2: getById('memeber-2-age').value,
-			fio_1: getById('memeber-1').value,
-			fio_2: getById('memeber-2').value,
-			univercity_1: getById('memeber-1-institute').value,
-			univercity_2: getById('memeber-2-institute').value,
-			tg_1: getById('memeber-1-telegram').value,
-			tg_2: getById('memeber-2-telegram').value,
-			team_name: getById('team-name').value,
-			email_1: getById('memeber-1-email').value,
-			email_2: getById('memeber-2-email').value,
-			case_number: document.querySelector('#register input[name="track"]:checked').value,
-			recaptcha: token,
-		}),
+		body: JSON.stringify(res),
+		// body: JSON.stringify({
+		// 	age_1: getById('memeber-1-age').value,
+		// 	age_2: getById('memeber-2-age').value,
+		// 	fio_1: getById('memeber-1').value,
+		// 	fio_2: getById('memeber-2').value,
+		// 	univercity_1: getById('memeber-1-institute').value,
+		// 	univercity_2: getById('memeber-2-institute').value,
+		// 	tg_1: getById('memeber-1-telegram').value,
+		// 	tg_2: getById('memeber-2-telegram').value,
+		// 	team_name: getById('team-name').value,
+		// 	email_1: getById('memeber-1-email').value,
+		// 	email_2: getById('memeber-2-email').value,
+		// 	case_number: document.querySelector('#register input[name="track"]:checked').value,
+		// 	recaptcha: token,
+		// }),
 	})
 		.then(() => {
 			console.log('form sent')
@@ -63,7 +80,7 @@ globalThis.onSubmit = (token) => {
 			notify.classList.add('visible')
 			setTimeout(() => {
 				notify.classList.remove('visible')
-			}, 4000)
+			}, 5000)
 		})
 		.catch(() => {
 			console.error('ERROR in form')
@@ -124,6 +141,23 @@ function init() {
 		if (i % 2 == 0) orb.style.left = (Math.random() * maxWidth) / 2 + 'px'
 		else orb.style.right = Math.random() * maxWidth + 'px'
 		orb.style.width = '1350px'
+	})
+	// показ стольких полей заполнения участников, сколько было указано
+	document.getElementById('team-length').addEventListener('change', (e) => {
+		const formPersons = document.querySelectorAll('#form-person')
+		let i
+		for (i = 0; i < Math.min(formPersons.length, +e.target.value); i++) {
+			formPersons[i].classList.remove('hidden')
+			formPersons[i].querySelectorAll('input').forEach((input) => {
+				input.required = true
+			})
+		}
+		for (i = +e.target.value; i > 2 && i < formPersons.length; i++) {
+			formPersons[i].classList.add('hidden')
+			formPersons[i].querySelectorAll('input').forEach((input) => {
+				input.required = false
+			})
+		}
 	})
 }
 
