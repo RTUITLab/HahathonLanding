@@ -1,24 +1,11 @@
 const getById = (id) => document.getElementById(id)
-// Age input controls
-const ageInput = [getById('memeber-1-age'), getById('memeber-2-age')]
-const minAge = 18
-const maxAge = 25
+
 const [maxHeight, maxWidth] = [
 	document.querySelector('body > div').scrollHeight,
 	document.querySelector('body > div').scrollWidth,
 ]
 
-ageInput.forEach((input) =>
-	input.addEventListener('change', (e) => {
-		const age = parseInt(e.target.value)
-		if (age < minAge) {
-			e.target.value = minAge
-		} else if (age > maxAge) {
-			e.target.value = maxAge
-		}
-	})
-)
-
+// Показ сообщения об ошибке в форме
 getById('register').addEventListener(
 	'invalid',
 	(e) => {
@@ -28,6 +15,7 @@ getById('register').addEventListener(
 	true
 )
 
+// при отправке формы
 globalThis.onSubmit = (token) => {
 	if (!getById('register').checkValidity()) {
 		console.info('form check failed')
@@ -56,9 +44,7 @@ globalThis.onSubmit = (token) => {
 			member4: [members[3]],
 		},
 	}
-	// console.log(+document.querySelector('#register input[name="track"]:checked').value, res)
 	fetch('https://hahaton-mirea.ru/api/teams', {
-		//window.location.origin + '/api/teams', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -117,6 +103,7 @@ document.querySelector('.header__navbar-mobile > .logo').addEventListener('click
 // скрытие мобильного хэдера при скролле вниз
 let prevScrollPos = window.pageYOffset
 window.addEventListener('scroll', function () {
+	if (document.querySelector('.hamburger').dataset.opened === 'true') return
 	let currentScrollPos = window.pageYOffset
 	if (prevScrollPos > currentScrollPos) {
 		document.querySelector('.header__navbar-mobile').style.top = '0'
@@ -124,6 +111,25 @@ window.addEventListener('scroll', function () {
 		document.querySelector('.header__navbar-mobile').style.top = '-60px'
 	}
 	prevScrollPos = currentScrollPos
+})
+
+// показ стольких полей заполнения участников, сколько было указано
+getById('team-length').addEventListener('change', (e) => {
+	const formPersons = document.querySelectorAll('#form-person')
+	const personsCounter = +e.target.value > 4 ? 4 : +e.target.value < 2 ? 2 : +e.target.value
+	let i
+	for (i = 0; i < personsCounter; i++) {
+		formPersons[i].classList.remove('hidden')
+		formPersons[i].querySelectorAll('input').forEach((input) => {
+			input.required = true
+		})
+	}
+	for (i = personsCounter; i < formPersons.length; i++) {
+		formPersons[i].classList.add('hidden')
+		formPersons[i].querySelectorAll('input').forEach((input) => {
+			input.required = false
+		})
+	}
 })
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
@@ -136,23 +142,6 @@ function init() {
 		if (i % 2 == 0) orb.style.left = (Math.random() * maxWidth) / 2 + 'px'
 		else orb.style.right = Math.random() * maxWidth + 'px'
 		orb.style.width = '1350px'
-	})
-	// показ стольких полей заполнения участников, сколько было указано
-	document.getElementById('team-length').addEventListener('change', (e) => {
-		const formPersons = document.querySelectorAll('#form-person')
-		let i
-		for (i = 0; i < Math.min(formPersons.length, +e.target.value); i++) {
-			formPersons[i].classList.remove('hidden')
-			formPersons[i].querySelectorAll('input').forEach((input) => {
-				input.required = true
-			})
-		}
-		for (i = +e.target.value; i > 2 && i < formPersons.length; i++) {
-			formPersons[i].classList.add('hidden')
-			formPersons[i].querySelectorAll('input').forEach((input) => {
-				input.required = false
-			})
-		}
 	})
 }
 
