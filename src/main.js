@@ -56,7 +56,8 @@ globalThis.onSubmit = (token) => {
 		.then((res) => {
 			// console.log('form sent')
 			if (res.ok === false || +res?.status === 400) {
-				getById('error__reg').innerText = 'Ошибка при отправке. Проверьте корректность и попробуйте еще раз'
+				getById('error__reg').innerText =
+					'Ошибка при отправке. Проверьте корректность данных или свяжитесь с организатором'
 				return false
 			}
 			getById('register').reset()
