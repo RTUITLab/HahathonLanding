@@ -53,8 +53,12 @@ globalThis.onSubmit = (token) => {
 		},
 		body: JSON.stringify(res),
 	})
-		.then(() => {
-			console.log('form sent')
+		.then((res) => {
+			// console.log('form sent')
+			if (res.ok === false || +res?.status === 400) {
+				getById('error__reg').innerText = 'Ошибка при отправке. Проверьте корректность и попробуйте еще раз'
+				return false
+			}
 			getById('register').reset()
 			const notify = document.querySelector('.notification')
 
@@ -64,7 +68,8 @@ globalThis.onSubmit = (token) => {
 			}, 5000)
 		})
 		.catch(() => {
-			console.error('ERROR in form')
+			console.error('ERROR in form sending')
+			getById('error__reg').innerText = 'Ошибка при отправке. Попробуйте еще раз'
 		})
 
 	return false
