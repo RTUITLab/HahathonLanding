@@ -72,20 +72,35 @@
 			.description {
 				margin: 0;
 				font-family: Inter;
-				font-size: 26px;
+				font-size: 22px;
 				font-weight: 400;
 				line-height: 32px;
 				letter-spacing: 0em;
 				text-align: left;
 				max-width: 100%;
+				align-self: start;
 				@media (max-width: 1065px) {
-					font-size: 22px;
+					font-size: 18px; //22
 				}
 				@media (max-width: 931px) {
-					font-size: 20px;
+					font-size: 16px;
 				}
 				@media (max-width: $mobile-breakpoint) {
+					font-size: 14px;
+					line-height: 24px;
+				}
+			}
+			.fullDescription {
+				@extend .description;
+				font-size: 24px;
+				@media (max-width: 1065px) {
+					font-size: 20px;
+				}
+				@media (max-width: 931px) {
 					font-size: 18px;
+				}
+				@media (max-width: $mobile-breakpoint) {
+					font-size: 16px;
 					line-height: 24px;
 				}
 			}
