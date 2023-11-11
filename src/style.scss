@@ -14,6 +14,11 @@
 	font-display: swap;
 }
 @font-face {
+	font-family: 'AKONY';
+	src: url('fonts/Akony/AKONY.otf');
+	font-display: swap;
+}
+@font-face {
 	font-family: 'Inter';
 	font-weight: 400;
 	src: url('fonts/Inter/Inter-Regular.ttf');
@@ -71,13 +76,14 @@
 	animation: flyReverse 40s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 	@media (max-width: 800px) {
 		max-width: 50%;
-		animation: flyReverseMobile 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+		animation: flyReverseMobile 16s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+			infinite;
 	}
 }
 
 .orbs > svg:nth-child(3n - 1) {
 	max-width: 15%;
-	filter: blur(5px) grayscale(1);
+	filter: blur(10px);
 }
 
 .orbs > svg:nth-child(3n - 2) {
@@ -89,9 +95,9 @@
 	max-width: 60%;
 	filter: blur(0) grayscale(0);
 }
-.orbs > svg:nth-child(5n-1) {
-	filter: grayscale(1);
-}
+// .orbs > svg:nth-child(5n-1) {
+// 	filter: hue-rotate(58deg);
+// }
 
 .orbs > svg:nth-child(3n) {
 	animation-delay: -7s;
@@ -187,7 +193,11 @@ span.button {
 	font-size: 24px;
 	line-height: 29px;
 	color: white;
-	background: linear-gradient(267.24deg, rgba(242, 242, 242, 0.25) 22.52%, rgba(242, 242, 242, 0.05) 83.16%),
+	background: linear-gradient(
+			267.24deg,
+			rgba(242, 242, 242, 0.25) 22.52%,
+			rgba(242, 242, 242, 0.05) 83.16%
+		),
 		#0077ff;
 	box-shadow: 0px 4px 15px rgba(0, 119, 255, 0.5);
 	border-radius: 20px;
@@ -261,18 +271,20 @@ a {
 h1,
 h2 {
 	font-family: Furore;
-	font-weight: 400;
 	letter-spacing: 0em;
-	font-size: 108px;
-	line-height: 108px;
+	font-family: 'AKONY';
+	font-size: 99px;
+	font-weight: 700;
+	line-height: 100%;
 	text-align: left;
 	position: relative;
 	color: transparent;
-	-webkit-text-stroke: 1px #0077ff;
+	// -webkit-text-stroke: 1px #0077ff;
+	text-shadow: 10px 10px 20px rgba(255, 153, 0, 0.4);
 	//text-shadow: -1px 1px 0 #0077ff, 1px 1px 0 #0077ff, 1px -1px 0 #0077ff, -1px -1px 0 #0077ff;
 	margin: 0;
-	padding-top: 10px;
-	padding-left: 10px;
+	padding-top: 0px;
+	padding-left: 0px;
 	&:hover {
 		cursor: default;
 	}

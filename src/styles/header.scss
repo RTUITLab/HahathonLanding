@@ -86,6 +86,10 @@
 				@media (max-width: $mobile-breakpoint) {
 					display: none;
 				}
+
+				.sponsorsDivider:hover {
+					cursor: default;
+				}
 			}
 			&__header {
 				&::after {

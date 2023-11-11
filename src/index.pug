@@ -1,5 +1,6 @@
 -
-  var blueOrbs = new Array(20)
+  var blueOrbs = new Array(11)
+  var orangeOrbs = new Array(11)
 
 doctype html
 html(lang="ru")
@@ -71,7 +72,9 @@ html(lang="ru")
       include mixins/page-footer
     .orbs
       each val in blueOrbs
-        include assets/orbs/orb.svg
+        include assets/orbs/orb1.svg
+      each val in orangeOrbs
+        include assets/orbs/orb2.svg
 
     script(src="https://www.google.com/recaptcha/api.js" async defer)
     script(src="./main.js" type="module")
