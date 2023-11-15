@@ -112,15 +112,21 @@ document.querySelectorAll('#hamburger-link').forEach((link) =>
 // 	});
 
 // скрытие мобильного хэдера при скролле вниз
-let prevScrollPos = window.pageYOffset;
+let prevScrollPos = window.scrollY;
 window.addEventListener('scroll', function () {
 	if (document.querySelector('.hamburger').dataset.opened === 'true') return;
-	let currentScrollPos = window.pageYOffset;
+	let currentScrollPos = window.scrollY;
+
 	if (prevScrollPos > currentScrollPos) {
 		document.querySelector('.header__navbar-mobile').style.top = '0';
 	} else {
 		document.querySelector('.header__navbar-mobile').style.top = '-60px';
 	}
+
+	if (currentScrollPos < 100) {
+		document.querySelector('.header__navbar-mobile').style.top = '0';
+	}
+
 	prevScrollPos = currentScrollPos;
 });
 

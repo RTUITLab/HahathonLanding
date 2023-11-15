@@ -242,6 +242,10 @@ a {
 		&:hover {
 			filter: grayscale(0);
 		}
+
+		@media screen and (max-width: 1024px) {
+			filter: grayscale(0);
+		}
 	}
 	&.mirea {
 		transition: opacity 0.2s;
@@ -249,14 +253,14 @@ a {
 		&:hover {
 			opacity: 1;
 		}
+
+		@media screen and (max-width: 1024px) {
+			opacity: 1;
+		}
 	}
 
 	@media screen and (max-width: 564px) {
 		transform: scale(0.75) translateY(0);
-	}
-
-	@media screen and (max-width: 500px) {
-		transform: scale(0.5);
 	}
 }
 
@@ -297,6 +301,7 @@ h2 {
 
 		@media screen and (max-width: 564px) {
 			top: 5px;
+			transform: translateX(18px);
 		}
 	}
 }
