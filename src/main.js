@@ -22,8 +22,8 @@ globalThis.onSubmit = (token) => {
 		return false;
 	}
 	getById('error__reg').innerText = '';
-	let members = [{}, {}, {}, {}],
-		members_count = +getById('team-length').value;
+	let members = [{}, {}],
+		members_count = 2;
 	for (let i = 1; i <= members_count; i++) {
 		members[i - 1] = {
 			name: getById(`memeber-${i}`).value,
@@ -41,8 +41,6 @@ globalThis.onSubmit = (token) => {
 			members_count,
 			members: [members[0]],
 			member2: [members[1]],
-			member3: [members[2]],
-			member4: [members[3]],
 		},
 	};
 	fetch('https://hahaton-mirea.ru/api/teams', {
@@ -107,11 +105,11 @@ document.querySelectorAll('#hamburger-link').forEach((link) =>
 );
 
 // Нажатие на мобильный хэдер
-document
-	.querySelector('.header__navbar-mobile > .logo')
-	.addEventListener('click', () => {
-		window.scrollTo(0, 0);
-	});
+// document
+// 	.querySelector('.header__navbar-mobile > .logo')
+// 	.addEventListener('click', () => {
+// 		window.scrollTo(0, 0);
+// 	});
 
 // скрытие мобильного хэдера при скролле вниз
 let prevScrollPos = window.pageYOffset;
@@ -127,24 +125,24 @@ window.addEventListener('scroll', function () {
 });
 
 // показ стольких полей заполнения участников, сколько было указано
-getById('team-length').addEventListener('change', (e) => {
-	const formPersons = document.querySelectorAll('#form-person');
-	const personsCounter =
-		+e.target.value > 4 ? 4 : +e.target.value < 2 ? 2 : +e.target.value;
-	let i;
-	for (i = 0; i < personsCounter; i++) {
-		formPersons[i].classList.remove('hidden');
-		formPersons[i].querySelectorAll('input').forEach((input) => {
-			input.required = true;
-		});
-	}
-	for (i = personsCounter; i < formPersons.length; i++) {
-		formPersons[i].classList.add('hidden');
-		formPersons[i].querySelectorAll('input').forEach((input) => {
-			input.required = false;
-		});
-	}
-});
+// getById('team-length').addEventListener('change', (e) => {
+// 	const formPersons = document.querySelectorAll('#form-person');
+// 	const personsCounter =
+// 		+e.target.value > 4 ? 4 : +e.target.value < 2 ? 2 : +e.target.value;
+// 	let i;
+// 	for (i = 0; i < personsCounter; i++) {
+// 		formPersons[i].classList.remove('hidden');
+// 		formPersons[i].querySelectorAll('input').forEach((input) => {
+// 			input.required = true;
+// 		});
+// 	}
+// 	for (i = personsCounter; i < formPersons.length; i++) {
+// 		formPersons[i].classList.add('hidden');
+// 		formPersons[i].querySelectorAll('input').forEach((input) => {
+// 			input.required = false;
+// 		});
+// 	}
+// });
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100));
 

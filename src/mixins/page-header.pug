@@ -2,14 +2,24 @@
   var curriculums_data = [
   {
     "stage": "Публикация заданий",
-    "date": "15.04.2023 20:00",
+    "date": "17.10",
+    "time": "23:00", 
   },{
     "stage": "Завершение приёма решений",
-    "date": "23.04.2023 23:59",
+    "date": "21.10",
+    "time": "10:00", 
   },{
     "stage": "Публикация результатов",
-    "date": "28.04.2023 20:00",
+    "date": "21.10",
+    "time": "20:00", 
   }]
+
+  //- var timings = [{
+  //-   {
+  //-     'stage': 'Публикация заданий',
+
+  //-   }
+  //- }]
   
 mixin curriculum-block(data)
   .curriculum-block 
@@ -31,33 +41,49 @@ header.header
         img(src="assets/logos/telegram.svg" alt="Телеграм чат"  width="28px" height="24px")
 
   .header__navbar-mobile
-    img.logo(src="assets/logos/header_hack.svg" width="150px" height="30px" alt="Логотип хакатона")
+    //- img.logo(src="assets/logos/header_hack.svg" width="150px" height="30px" alt="Логотип хакатона")
     .hamburger(data-opened='false')
     include hamburger-wrapper
     
   .header__main
     .title
       .title__icons
-        a(href="https://vkplay.ru/" target='_blank')
-          img.icon#header-icon.vkPlay(src="./assets/logos/VKPlay_hover.svg"  alt="Логотип VK Игры" width="120px" height="31px")
-        span(class='sponsorsDivider') X
         a(href="https://education.vk.company/" target='_blank')
-          img.icon#header-icon.vkEducation(src="./assets/logos/VKEducationRU_hover.svg"  alt="Логотип VK Education" width="160px" height="23px")
-        span(class='sponsorsDivider') X 
+          img.icon#header-icon.vk(src="./assets/logos/VK_Education.svg"  alt="Логотип VK Education" width='200px')
+        span(class='sponsorsDivider') X
+        a(href="https://vkplay.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/VK_Play.svg"  alt="Логотип VK Play" width='140px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.rustore.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/RuStoreWithTitle.svg"  alt="Логотип RuStore" width='150px')
+        span(class='sponsorsDivider') X
         a(href="https://www.mirea.ru/" target='_blank')
-          img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="66px")
+          img.icon#header-icon.mirea(src="./assets/logos/RTU_Logo.svg"  alt="Логотип РТУ МИРЭА" width='93px' height='60px')
+      .title__icons
+        a(href="https://www.rustore.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/RuStoreWithTitle.svg"  alt="Логотип RuStore" width='150px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.mirea.ru/" target='_blank')
+          img.icon#header-icon.mirea(src="./assets/logos/RTU_Logo.svg"  alt="Логотип РТУ МИРЭА" width='93px' height='60px')
       h1.title__header Хахатон
       span.title__date 15.04 — 23.04
       a.button.title__button(href="#registration-section") Зарегистрироваться
-    .curriculum
-      each curriculum in curriculums_data
-        +curriculum-block(curriculum)
-    .title__icons-mobile
-      a(href="https://vkplay.ru/" target='_blank')
-        img.icon#header-icon.vkPlay(src="./assets/logos/VKPlay_hover.svg"  alt="Логотип VK Игры" width="120px" height="31px")
-      span(class='sponsorsDivider') X
-      a(href="https://education.vk.company/" target='_blank')
-        img.icon#header-icon.vkEducation(src="./assets/logos/VKEducationRU_hover.svg" alt="Логотип VK Education" width="160px" height="23px")
-      span(class='sponsorsDivider') X
-      a(href="https://www.mirea.ru/" target='_blank')
-        img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp" alt="Логотип РТУ МИРЭА" width="60px" height="66px")
+    .dates
+      each curriculum, index in curriculums_data
+        .dateContainer
+          .fullDate
+            p(class="date day")= curriculum.date
+            p(class="date time")= curriculum.time
+          .event(style=`margin-top: ${index * 100 + index * 30}px`)
+            p(class="eventStage")= curriculum.stage
+            img(class=`arrow-icon ${index === 2 ? "arrow-icon-hidden" : ""}` src="./assets/arrow.svg")
+          img(class=`arrow-down ${index === 2 ? "arrow-down-hidden" : ''}` src="./assets/arrowDown.svg" width='14px' height='57px')
+    //- .title__icons-mobile
+    //-   a(href="https://vkplay.ru/" target='_blank')
+    //-     img.icon#header-icon.vkPlay(src="./assets/logos/VKPlay_hover.svg"  alt="Логотип VK Игры" width="120px" height="31px")
+    //-   span(class='sponsorsDivider') X
+    //-   a(href="https://education.vk.company/" target='_blank')
+    //-     img.icon#header-icon.vkEducation(src="./assets/logos/VKEducationRU_hover.svg" alt="Логотип VK Education" width="160px" height="23px")
+    //-   span(class='sponsorsDivider') X
+    //-   a(href="https://www.mirea.ru/" target='_blank')
+    //-     img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp" alt="Логотип РТУ МИРЭА" width="60px" height="66px")

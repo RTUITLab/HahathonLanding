@@ -143,6 +143,7 @@
 /* Default layout settings*/
 * {
 	color: white;
+	font-family: 'AKONY';
 }
 
 html {
@@ -156,7 +157,7 @@ body {
 	width: 100%;
 	//max-width: 1600px;
 	font-family: Inter;
-	background: #1e1e1e;
+	background: #151515;
 	overflow-x: hidden;
 	height: 100%;
 }
@@ -193,34 +194,25 @@ span.button {
 	font-size: 24px;
 	line-height: 29px;
 	color: white;
+	border-radius: 20px;
 	background: linear-gradient(
-			267.24deg,
+			267deg,
 			rgba(242, 242, 242, 0.25) 22.52%,
 			rgba(242, 242, 242, 0.05) 83.16%
 		),
-		#0077ff;
-	box-shadow: 0px 4px 15px rgba(0, 119, 255, 0.5);
-	border-radius: 20px;
+		#f90;
+	box-shadow: 0px 4px 15px 0px rgba(255, 153, 0, 0.5);
 	transition: box-shadow 0.2s;
 	&:hover {
 		box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
 		color: white;
 	}
-	@media (max-width: $mobile-breakpoint) {
-		padding: 20px 50px;
-		text-align: center;
-		line-height: 22px;
+
+	@media screen and (max-width: 564px) {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 20px 5px;
 		font-size: 18px;
-		max-width: max-content;
-		max-height: 72px;
-		&:hover {
-			background: linear-gradient(
-					267.24deg,
-					rgba(242, 242, 242, 0.25) 22.52%,
-					rgba(242, 242, 242, 0.05) 83.16%
-				),
-				#0c60be;
-		}
 	}
 }
 
@@ -233,10 +225,10 @@ a {
 	text-decoration: none;
 	transition: color 0.2s;
 	&:hover {
-		color: #3191ff;
+		color: #ffad31;
 	}
 	&:active {
-		color: #0265d7;
+		color: #ffad31;
 	}
 	/*&:visited {
 		color: #0077ff;
@@ -244,8 +236,7 @@ a {
 }
 
 .icon {
-	&.vkPlay,
-	&.vkEducation {
+	&.vk {
 		transition: filter 0.2s;
 		filter: grayscale(1);
 		&:hover {
@@ -253,11 +244,19 @@ a {
 		}
 	}
 	&.mirea {
-		transition: filter 0.2s;
-		filter: grayscale(1);
+		transition: opacity 0.2s;
+		opacity: 0.7;
 		&:hover {
-			filter: grayscale(0);
+			opacity: 1;
 		}
+	}
+
+	@media screen and (max-width: 564px) {
+		transform: scale(0.75) translateY(0);
+	}
+
+	@media screen and (max-width: 500px) {
+		transform: scale(0.5);
 	}
 }
 
@@ -273,7 +272,7 @@ h2 {
 	font-family: Furore;
 	letter-spacing: 0em;
 	font-family: 'AKONY';
-	font-size: 99px;
+	font-size: 70px;
 	font-weight: 700;
 	line-height: 100%;
 	text-align: left;
@@ -295,19 +294,23 @@ h2 {
 		left: 0;
 		color: white;
 		-webkit-text-stroke: 0;
+
+		@media screen and (max-width: 564px) {
+			top: 5px;
+		}
 	}
 }
 
 h2 {
-	margin: 200px 0 100px 0;
-	@media (max-width: $tablet-breakpoint) {
-		font-size: 68px;
-		margin: 150px 0 60px 0;
-	}
-	@media (max-width: $mobile-breakpoint) {
-		margin: 100px 0 60px 0;
+	margin: 254px 0 60px 0;
+	@media (max-width: 1024px) {
 		font-size: 36px;
-		line-height: 36px;
+		margin: 210px 0 40px 0;
+	}
+	@media (max-width: 564px) {
+		margin: 120px 0 34px 0;
+		font-size: 20px;
+		line-height: 108%;
 	}
 }
 
