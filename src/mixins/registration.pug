@@ -39,16 +39,24 @@ section#registration-section
         input(type="text" id="memeber-4-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 4 участника")
         input(type="text" id="memeber-4-institute" placeholder="Университет*" minlength="2" data-error="Необходимо указать Университет 4 участника")
         input(type="number" id="memeber-4-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 4 участника")
+
+      h3.hidden#form-person
+        label(for="memeber-5") Участник №5
+          input(type="text" id="memeber-5" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 5 участника")
+        input(type="email" id="memeber-5-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 5 участника")
+        input(type="text" id="memeber-5-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 5 участника")
+        input(type="text" id="memeber-5-institute" placeholder="Университет*" minlength="2" data-error="Необходимо указать Университет 5 участника")
+        input(type="number" id="memeber-5-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 5 участника")
     
     h3
       label Выбранный трек
     .radios
       label.radio(for="task1")
         input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
-        span.checkmark Кейс от Института ИТ
+        span.checkmark Кейс AR-игра
       label.radio(for="task2")
         input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
-        span.checkmark Кейс от VK Play  
+        span.checkmark Кейс AR-приложение 
 
     p.error#error__reg 
 

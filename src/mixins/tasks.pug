@@ -1,26 +1,29 @@
 -
   var tasks_data = [
   {
-    "title": "Кейс от Института ИТ",
+    "title": "Кейс от Института ИТ,",
+    "org1": "VK Education,",
+    "org2": "VK Play,",
+    "org3": "RuStore",
     "description": "Разработка мобильной AR-игры.",
-    "theme": "Тема: 75-летний юбилей РТУ МИРЭА",
   },
   {
-    "title": "Кейс от VK Play",
-    "description": "AR-приложение для геймификации ИТ.",
-    "theme": "Тема: 75-летний юбилей РТУ МИРЭА",
+    "title": "Кейс от VK Play,",
+    "org1": "VK Education,",
+    "org2": "RuStore,",
+    "org3": "Инстутита ИТ",
+    "description": "Мобильное AR-приложение для геймификации ИТ-мероприятий.",
   }] 
 
 mixin task(data)
   article.task
-    h3.title= data.title
-    p.description
-      = data.description 
-      //- p.winner Победитель: 
-      //-   = data.winner
-      //- p.task Задача: 
-      //-   = data.task
-    //- img(src=data.imgSrc alt="Иконка кейса" width=data.width height=data.height)
+    div
+      h3.title= data.title
+      h3.title=data.org1
+      h3.title=data.org2
+      h3.title=data.org3
+      p.description
+        = data.description
     div
       label(for=data.radioId)
         span.button.taskButton Выбрать кейс

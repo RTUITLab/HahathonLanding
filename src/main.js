@@ -16,24 +16,16 @@ getById('register').addEventListener(
 );
 
 getById('form-submit').addEventListener('click', () => {
-	console.log({
-		name: getById(`memeber-${1}`).value,
-		email: getById(`memeber-${1}-email`).value,
-		tg: getById(`memeber-${1}-telegram`).value,
-		age: +getById(`memeber-${1}-age`).value,
-		school: getById(`memeber-${1}-institute`).value,
-	});
 	onSubmit(123);
 });
 
 // при отправке формы
 globalThis.onSubmit = (token) => {
 	if (!getById('register').checkValidity()) {
-		console.info('form check failed');
 		return false;
 	}
 	getById('error__reg').innerText = '';
-	let members = [{}, {}, {}, {}],
+	let members = [{}, {}, {}, {}, {}],
 		members_count = (members_count = +getById('team-length').value);
 	for (let i = 1; i <= members_count; i++) {
 		members[i - 1] = {
@@ -54,6 +46,7 @@ globalThis.onSubmit = (token) => {
 			member2: [members[1]],
 			member3: [members[2]],
 			member4: [members[3]],
+			member5: [members[4]],
 		},
 	};
 	fetch('https://hahaton-mirea.ru/api/teams', {
@@ -66,7 +59,6 @@ globalThis.onSubmit = (token) => {
 		body: JSON.stringify(res),
 	})
 		.then((res) => {
-			// console.log('form sent')
 			if (res.ok === false || +res?.status === 400) {
 				getById('error__reg').innerText =
 					'Ошибка при отправке. Проверьте корректность данных или свяжитесь с организатором';
@@ -117,13 +109,6 @@ document.querySelectorAll('#hamburger-link').forEach((link) =>
 	})
 );
 
-// Нажатие на мобильный хэдер
-// document
-// 	.querySelector('.header__navbar-mobile > .logo')
-// 	.addEventListener('click', () => {
-// 		window.scrollTo(0, 0);
-// 	});
-
 // скрытие мобильного хэдера при скролле вниз
 let prevScrollPos = window.scrollY;
 window.addEventListener('scroll', function () {
@@ -147,7 +132,7 @@ window.addEventListener('scroll', function () {
 getById('team-length').addEventListener('change', (e) => {
 	const formPersons = document.querySelectorAll('#form-person');
 	const personsCounter =
-		+e.target.value > 4 ? 4 : +e.target.value < 2 ? 2 : +e.target.value;
+		+e.target.value > 5 ? 5 : +e.target.value < 2 ? 2 : +e.target.value;
 	let i;
 	for (i = 0; i < personsCounter; i++) {
 		formPersons[i].classList.remove('hidden');
