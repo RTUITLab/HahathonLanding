@@ -15,6 +15,17 @@ getById('register').addEventListener(
 	true
 );
 
+getById('form-submit').addEventListener('click', () => {
+	console.log({
+		name: getById(`memeber-${1}`).value,
+		email: getById(`memeber-${1}-email`).value,
+		tg: getById(`memeber-${1}-telegram`).value,
+		age: +getById(`memeber-${1}-age`).value,
+		school: getById(`memeber-${1}-institute`).value,
+	});
+	onSubmit(123);
+});
+
 // при отправке формы
 globalThis.onSubmit = (token) => {
 	if (!getById('register').checkValidity()) {

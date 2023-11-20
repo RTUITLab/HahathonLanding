@@ -2,19 +2,13 @@
   var tasks_data = [
   {
     "title": "Кейс от Института ИТ",
-    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "description": "Разработка мобильной AR-игры.",
     "theme": "Тема: 75-летний юбилей РТУ МИРЭА",
-    "duration": "Длительность: 2 минуты",
-    "format": "Формат: MP4",
-    "radioId": "task1"
   },
   {
-    "title": "Кейс от Института ИТ",
-    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "title": "Кейс от VK Play",
+    "description": "AR-приложение для геймификации ИТ.",
     "theme": "Тема: 75-летний юбилей РТУ МИРЭА",
-    "duration": "Длительность: 2 минуты",
-    "format": "Формат: MP4",
-    "radioId": "task2"
   }] 
 
 mixin task(data)
@@ -22,10 +16,6 @@ mixin task(data)
     h3.title= data.title
     p.description
       = data.description 
-    .info
-      p.theme= data.theme
-      p.theme= data.duration
-      p.theme= data.format
       //- p.winner Победитель: 
       //-   = data.winner
       //- p.task Задача: 
