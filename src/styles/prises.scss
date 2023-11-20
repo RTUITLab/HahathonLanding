@@ -11,6 +11,7 @@
 		width: 100%;
 		display: flex;
 		gap: 2.5%;
+		justify-content: center;
 
 		@media (max-width: 1024px) {
 			flex-direction: column;
