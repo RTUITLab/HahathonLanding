@@ -26,15 +26,19 @@ globalThis.onSubmit = (token) => {
 	}
 	getById('error__reg').innerText = '';
 	let members = [{}, {}, {}, {}, {}],
-		members_count = (members_count = +getById('team-length').value);
+		members_count = parseInt(getById('team-length').value);
 	for (let i = 1; i <= members_count; i++) {
 		members[i - 1] = {
 			name: getById(`memeber-${i}`).value,
 			email: getById(`memeber-${i}-email`).value,
 			tg: getById(`memeber-${i}-telegram`).value,
 			age: +getById(`memeber-${i}-age`).value,
-			school: getById(`memeber-${i}-institute`).value,
+			school:
+				getById(`memeber-${i}-univer`).value +
+				'@' +
+				getById(`memeber-${i}-institute`).value,
 		};
+		console.log(members[i - 1]);
 	}
 	const res = {
 		data: {

@@ -236,7 +236,7 @@
 			margin-top: 287px;
 			padding: 0 2.3%;
 			display: grid;
-			grid-template-columns: 370px 370px 370px;
+			grid-template-columns: 270px 270px 270px 270px;
 			justify-items: center;
 			gap: 0 30px;
 
@@ -276,7 +276,7 @@
 					.date {
 						margin: 0;
 						font-family: 'AKONY';
-						font-size: 28px;
+						font-size: 20px;
 						font-style: normal;
 						font-weight: 700;
 						line-height: 108%;
@@ -313,7 +313,7 @@
 
 					&Stage {
 						margin: auto auto;
-						font-size: 24px;
+						font-size: 20px;
 						text-align: center;
 						text-wrap: wrap;
 						font-family: Inter;
@@ -326,8 +326,9 @@
 						}
 					}
 					.arrow-icon {
+						width: 170px;
 						position: absolute;
-						right: -227px;
+						right: -170px;
 						top: 50%;
 
 						&-hidden {
