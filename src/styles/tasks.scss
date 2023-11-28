@@ -11,111 +11,106 @@
 		justify-content: center;
 		gap: 20px;
 		width: 100%;
-		@media (max-width: 800px) {
+		@media (max-width: 1150px) {
 			justify-content: center;
 			flex-direction: column;
 		}
 		.task {
 			display: flex;
-			justify-content: space-around;
-			align-items: center;
 			flex-direction: column;
 			box-sizing: border-box;
-			gap: 30px;
 			background: rgba(255, 255, 255, 0.05);
 			backdrop-filter: blur(25px);
 			border-radius: 20px;
-			padding: 30px;
+			padding: 40px;
 			width: calc(50% - 20px);
-			@media (max-width: 1065px) {
-				gap: 10px;
+			height: 515px;
+			justify-content: space-between;
+
+			@media screen and (max-width: 1370px) {
+				height: 615px;
 			}
-			@media (max-width: 800px) {
-				justify-content: center;
+
+			@media screen and (max-width: 1160px) {
+				height: 650px;
+			}
+
+			@media screen and (max-width: 1150px) {
 				width: 100%;
+				height: 400px;
+				padding: 30px;
 			}
-			@media (max-width: 307px) {
-				gap: 30px;
+
+			@media screen and (max-width: 790px) {
+				height: 500px;
+			}
+
+			@media screen and (max-width: 610px) {
+				height: 600px;
+			}
+
+			@media screen and (max-width: 564px) {
+				height: 300px;
+			}
+
+			@media screen and (max-width: 475px) {
+				height: 450px;
 			}
 			.title {
 				margin: 0;
-				font-family: Furore;
-				height: max-content;
-				font-size: 52px;
+				font-family: 'AKONY';
+				font-size: 28px;
 				font-weight: 400;
-				height: calc(52px * 2);
 				letter-spacing: 0em;
 				text-align: left;
 				align-self: start;
-				@media (max-width: 1400px) {
-					font-size: 42px;
-					height: calc(42px * 2);
-				}
-				@media (max-width: 1200px) {
-					font-size: 36px;
-					height: calc(36px * 2);
-				}
-				@media (max-width: 1050px) {
-					font-size: 30px;
-					height: calc(30px * 2);
-				}
-				@media (max-width: 900px) {
-					font-size: 25px;
-					height: calc(25px * 2);
-					justify-content: center;
-					width: 100%;
-				}
-				@media (max-width: $mobile-breakpoint) {
-					font-size: 28px;
-					height: max-content;
-					line-height: 28px;
+
+				@media screen and (max-width: 564px) {
+					font-size: 15px;
 				}
 			}
 			.description {
 				margin: 0;
 				font-family: Inter;
-				font-size: 26px;
+				font-size: 24px;
 				font-weight: 400;
-				line-height: 32px;
+				line-height: 124%;
 				letter-spacing: 0em;
 				text-align: left;
 				max-width: 100%;
-				@media (max-width: 1065px) {
-					font-size: 22px;
+				align-self: start;
+				margin-top: 30px;
+
+				@media screen and (max-width: 1150px) {
+					margin-top: 30px;
 				}
-				@media (max-width: 931px) {
-					font-size: 20px;
-				}
-				@media (max-width: $mobile-breakpoint) {
+
+				@media screen and (max-width: 564px) {
+					margin-top: 11px;
 					font-size: 18px;
-					line-height: 24px;
 				}
 			}
-			.rows {
-				align-self: flex-start;
-				.winner,
-				.duration,
-				.theme,
-				.format {
-					font-family: Inter;
-					font-size: 20px;
+
+			.info {
+				margin-top: 30px;
+				display: flex;
+				flex-direction: column;
+				gap: 9px;
+
+				@media screen and (max-width: 1150px) {
+					gap: 15px;
+				}
+
+				.theme {
+					margin: 0;
 					font-weight: 700;
-					line-height: 32px;
-					letter-spacing: 0em;
-					text-align: left;
-					@media (max-width: 1065px) {
+					font-size: 23px;
+					@media screen and (max-width: 564px) {
 						font-size: 18px;
-					}
-					@media (max-width: 908px) {
-						font-size: 15px;
-						line-height: 24px;
-					}
-					@media (max-width: $mobile-breakpoint) {
-						font-size: 18px;
-						line-height: 24px;
 					}
 				}
 			}
+
 			img {
 				max-width: 100%;
 				height: auto;
@@ -123,15 +118,8 @@
 				box-sizing: border-box;
 			}
 			.taskButton {
-				white-space: nowrap;
-				@media (max-width: 1070px) {
-					align-self: center;
-					padding: 30px;
-					max-width: 100%;
-				}
-				@media (max-width: $mobile-breakpoint) {
-					max-width: 100%;
-				}
+				margin-top: 60px;
+				text-align: center;
 			}
 		}
 	}

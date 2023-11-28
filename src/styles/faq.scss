@@ -95,8 +95,13 @@
 						line-height: 19px;
 					}
 					& a {
-						color: #a5dbff;
+						color: #f90;
 						font-size: 20px;
+
+						@media (max-width: $mobile-breakpoint) {
+							font-size: 14px;
+							line-height: 19px;
+						}
 					}
 				}
 			}

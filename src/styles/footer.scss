@@ -39,12 +39,6 @@ footer {
 			}
 		}
 		a {
-			@media (max-width: 900px) {
-				font-size: 18px;
-			}
-			@media (max-width: 830px) {
-				font-size: 16px;
-			}
 			@media (max-width: $tablet-breakpoint) {
 				text-align: center;
 				font-size: 24px;
@@ -57,14 +51,20 @@ footer {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			gap: 15px;
+			gap: 25px;
 		}
 	}
 	.bottom {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 50px;
+		gap: 30px 130px;
+		flex-wrap: wrap;
+		@media (max-width: $mobile-breakpoint) {
+			flex-direction: column;
+			gap: 20px;
+			padding-top: 45px;
+		}
 	}
 }
 

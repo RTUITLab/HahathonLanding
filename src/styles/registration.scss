@@ -5,27 +5,25 @@
 	&::after {
 		content: 'Регистрация';
 	}
-	@media (max-width: 1005px) {
-		font-size: 90px;
-	}
-	@media (max-width: 840px) {
-		font-size: 68px;
-	}
-	@media (max-width: 650px) {
+
+	@media screen and (max-width: 1460px) {
 		font-size: 50px;
 	}
-	@media (max-width: 520px) {
+
+	@media screen and (max-width: 1024px) {
 		font-size: 36px;
 	}
-	@media (max-width: $mobile-breakpoint) {
-		font-size: 36px;
-		line-height: 36px;
+
+	@media screen and (max-width: 750px) {
+		font-size: 28px;
 	}
-	@media (max-width: 355px) {
-		font-size: 30px;
+
+	@media screen and (max-width: 564px) {
+		font-size: 20px;
 	}
-	@media (max-width: 355px) {
-		font-size: 26px;
+
+	@media screen and (max-width: 400px) {
+		font-size: 16px;
 	}
 }
 
@@ -50,15 +48,19 @@
 	.image-wrapper {
 		img {
 			float: right;
-			width: 20%;
+			width: 13%;
 			height: auto;
+
+			@media (min-width: 1490px) {
+				width: 10%;
+			}
 		}
 		@media (max-width: $tablet-breakpoint) {
 			display: none;
 		}
 	}
 	form {
-		width: 70%;
+		width: 85%;
 		padding-bottom: 16px;
 		box-sizing: border-box;
 		@media (max-width: $tablet-breakpoint) {
@@ -183,8 +185,9 @@
 			margin-bottom: 6px;
 			width: 24px;
 			height: 24px;
+			padding: 2px;
 			display: inline-block;
-			border: 2px solid #0077ff;
+			border: 2px solid #d78102;
 			border-radius: 25px;
 			padding: 3px;
 		}
@@ -192,7 +195,7 @@
 }
 
 #registration-section form input:checked ~ .checkmark::before {
-	background: #0077ff;
+	background: #d78102;
 }
 
 .error {
@@ -202,7 +205,7 @@
 
 #policy,
 #policy a {
-	max-width: 100%;
+	max-width: 85%;
 	padding: 30px 0;
 	margin: 0;
 	font-family: Inter;
@@ -219,7 +222,7 @@
 	max-width: 100%;
 	padding: 0;
 	margin: 0;
-	color: #0077ff;
+	color: #d78102;
 }
 input:not(:invalid) + .error {
 	display: none;
@@ -227,6 +230,7 @@ input:not(:invalid) + .error {
 
 #registration-section form button.button {
 	max-width: 100%;
+	width: 100%;
 	margin-top: 16px;
 	border: none;
 	@media (max-width: $mobile-breakpoint) {
@@ -239,4 +243,8 @@ input:not(:invalid) + .error {
 	#registration-section form {
 		width: 100%;
 	}
+}
+
+.hidden {
+	display: none;
 }

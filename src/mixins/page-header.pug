@@ -1,14 +1,22 @@
 -
   var curriculums_data = [
   {
+    "stage": "Регистрация участников",
+    "date": "27.11-03.12",
+    "time" : "",
+  },
+  {
     "stage": "Публикация заданий",
-    "date": "18.10.2022 20:00",
+    "date": "03.12",
+    "time": "23:50", 
   },{
     "stage": "Завершение приёма решений",
-    "date": "21.10.2022 09:00",
+    "date": "10.12",
+    "time": "23:59", 
   },{
-    "stage": "Публикация результатов",
-    "date": "21.10.2022 20:00",
+    "stage": "Награждение",
+    "date": "15.12",
+    "time": "12:00", 
   }]
   
 mixin curriculum-block(data)
@@ -27,27 +35,57 @@ header.header
     li
       a(href="#registration-section") Регистрация
     li
-      a(href="https://t.me/creative_hack_2022_chat" target="_blank" rel="noopener noreferrer")
+      a(href="https://t.me/vkrum_2023" target="_blank" rel="noopener noreferrer")
         img(src="assets/logos/telegram.svg" alt="Телеграм чат"  width="28px" height="24px")
 
   .header__navbar-mobile
-    img.logo(src="assets/logos/header_hack.svg" width="150px" height="30px")
     .hamburger(data-opened='false')
     include hamburger-wrapper
     
   .header__main
     .title
       .title__icons
-        img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
-        span X
-        img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
+        a.icon-left(href="https://education.vk.company/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/VK_Education.svg"  alt="Логотип VK Education" width='200px')
+        span(class='sponsorsDivider') X
+        a.icon-right(href="https://vkplay.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/VK_Play.svg"  alt="Логотип VK Play" width='140px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.rustore.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/RuStoreWithTitle.svg"  alt="Логотип RuStore" width='150px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.mirea.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width='65px' height='70px')
+      .title__icons
+        a.icon-left(href="https://www.rustore.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/RuStoreWithTitle.svg"  alt="Логотип RuStore" width='150px')
+        span(class='sponsorsDivider') X
+        a.icon-right(href="https://www.mirea.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width='65px' height='70px') 
       h1.title__header Хакатон
-      span.title__date 18.10 — 21.10
+      .subtitle__block
+        p.name VkRuM
+        span.title__date 03.12 — 10.12
+      .title__icons.title__icons_tablet
+        a(href="https://education.vk.company/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/VK_Education.svg"  alt="Логотип VK Education" width='200px')
+        span(class='sponsorsDivider') X
+        a(href="https://vkplay.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/VK_Play.svg"  alt="Логотип VK Play" width='140px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.rustore.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/RuStoreWithTitle.svg"  alt="Логотип RuStore" width='150px')
+        span(class='sponsorsDivider') X
+        a(href="https://www.mirea.ru/" target='_blank')
+          img.icon#header-icon.vk(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width='65px' height='70px')
       a.button.title__button(href="#registration-section") Зарегистрироваться
-    .curriculum
-      each curriculum in curriculums_data
-        +curriculum-block(curriculum)
-    .title__icons-mobile
-      img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
-      span X
-      img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
+    .dates
+      each curriculum, index in curriculums_data
+        .dateContainer
+          .fullDate
+            p(class="date day")= curriculum.date
+            p(class="date time")= curriculum.time
+          .event(style=`margin-top: ${index * 100 + index * 26}px`)
+            p(class="eventStage")= curriculum.stage
+            img(class=`arrow-icon ${index === 3 ? "arrow-icon-hidden" : ""}` src="./assets/arrow2.svg")
+          img(class=`arrow-down ${index === 3 ? "arrow-down-hidden" : ''}` src="./assets/arrowDown.svg" width='14px' height='57px')

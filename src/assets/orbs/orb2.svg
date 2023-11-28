@@ -1,0 +1,11 @@
+<svg id="twoOrb" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="73.5" cy="73.5" r="73.5" fill="url(#paint0_radial_3_26)"/>
+<defs>
+<radialGradient id="paint0_radial_3_26" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(47.04 42.7074) rotate(51.4146) scale(111.646)">
+<stop offset="0.171875" stop-color="#CCCCCC"/>
+<stop offset="0.567708" stop-color="#656565"/>
+<stop offset="0.822917" stop-color="#1C1C1C"/>
+<stop offset="1" stop-color="#2B2B2B"/>
+</radialGradient>
+</defs>
+</svg>

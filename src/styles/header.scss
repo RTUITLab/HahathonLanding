@@ -21,15 +21,14 @@
 		}
 	}
 	&__navbar-mobile {
+		box-sizing: border-box;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		padding: 15px 0px;
+		padding: 18px 30px 18px 0;
 		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		background: #1e1e1e;
+		justify-content: flex-end;
 		transition: top 0.3s; //Эффект перехода при скольжении вниз/вверх
 		@media (min-width: calc($mobile-breakpoint + 1px)) {
 			display: none;
@@ -56,9 +55,13 @@
 
 	&__main {
 		width: 100%;
-		margin-top: 48px;
+		margin-top: 50px;
 		display: flex;
 		flex-direction: column;
+
+		@media screen and (max-width: 564px) {
+			margin-top: 0px;
+		}
 
 		.title {
 			display: flex;
@@ -75,49 +78,346 @@
 				gap: 30px;
 				justify-content: flex-start;
 				align-items: center;
+
+				a:nth-of-type(3) {
+					@media screen and (max-width: 1300px) {
+						display: none;
+					}
+
+					@media screen and (max-width: 810px) {
+						display: inline;
+					}
+				}
+
+				a:nth-of-type(4) {
+					@media screen and (max-width: 1300px) {
+						display: none;
+					}
+
+					@media screen and (max-width: 810px) {
+						display: inline;
+					}
+				}
+
+				&:nth-of-type(2) {
+					@media screen and (min-width: 1300px) {
+						display: none;
+					}
+				}
+
+				&_tablet {
+					@media screen and (min-width: 810px) {
+						display: none !important;
+					}
+				}
+
+				@media screen and (max-width: 1300px) {
+					width: 80%;
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					gap: 0;
+				}
+
+				@media screen and (max-width: 1024px) {
+					width: 100%;
+				}
+
+				@media screen and (max-width: 810px) {
+					display: flex;
+					flex-direction: column;
+					margin-top: 30px;
+					gap: 30px;
+
+					&:nth-of-type(1) {
+						display: none;
+					}
+
+					&:nth-of-type(2) {
+						display: none;
+					}
+				}
+
+				@media screen and (max-width: 564px) {
+					gap: 15px;
+				}
+
+				.icon-left {
+					text-align: left;
+				}
+
+				.icon-right {
+					text-align: right;
+				}
 				span {
 					font-family: Furore;
 					font-size: 28px;
 					font-weight: 400;
 					line-height: 32px;
 					letter-spacing: 0em;
-					text-align: left;
+					text-align: center;
+
+					&:nth-of-type(2) {
+						@media screen and (max-width: 1300px) {
+							display: none;
+						}
+
+						@media screen and (max-width: 810px) {
+							display: inline;
+						}
+					}
+
+					&:nth-of-type(3) {
+						@media screen and (max-width: 1300px) {
+							display: none;
+						}
+
+						@media screen and (max-width: 810px) {
+							display: inline;
+						}
+					}
+
+					@media screen and (max-width: 564px) {
+						font-size: 20px;
+					}
 				}
-				@media (max-width: $mobile-breakpoint) {
-					display: none;
+
+				.sponsorsDivider {
+					font-family: 'AKONY';
+					line-height: 130%;
+					&:hover {
+						cursor: default;
+					}
 				}
 			}
 			&__header {
+				font-size: 99px;
+				margin-top: 66px;
 				&::after {
 					content: 'Хакатон';
 				}
+
+				@media screen and (max-width: 1420px) {
+					font-size: 70px;
+				}
+
+				@media screen and (max-width: 1024px) {
+					font-size: 43px;
+					margin-top: 36px;
+				}
+
+				@media screen and (max-width: 564px) {
+					font-size: 28px;
+					text-align: center;
+					margin: 0 auto;
+					margin-top: 35px;
+					transform: translateX(-20px);
+				}
+			}
+
+			.subtitle__block {
+				width: 992px;
+				display: flex;
+				margin-top: 21px;
+				align-items: flex-start;
+				justify-content: space-between;
+
+				@media screen and (max-width: 1420px) {
+					width: 100%;
+					flex-direction: column;
+					gap: 30px;
+				}
+
+				@media screen and (max-width: 1024px) {
+					margin-top: 15px;
+				}
+
+				.name {
+					margin: 0;
+					font-family: Inter;
+					font-weight: 900;
+					font-size: 80px;
+					line-height: 81%;
+
+					@media screen and (max-width: 1420px) {
+						font-size: 60px;
+					}
+
+					@media screen and (max-width: 1024px) {
+						font-size: 45px;
+					}
+
+					@media screen and (max-width: 564px) {
+						display: none;
+					}
+				}
 			}
 			&__date {
-				font-family: Furore;
-				font-size: 72px;
+				font-family: AKONY;
+				font-size: 43px;
 				font-weight: 400;
 				letter-spacing: 0em;
 				text-align: left;
-				@media (max-width: 666px) {
-					font-size: 52px;
+
+				@media screen and (max-width: 1024px) {
+					font-size: 28px;
 				}
-				@media (max-width: $mobile-breakpoint) {
+				@media (max-width: 564px) {
 					align-self: center;
-					font-size: 36px;
-					line-height: 48px;
+					text-align: center;
+					font-size: 20px;
+					line-height: 108%;
+					margin-top: 0;
 				}
 			}
 			&__button {
-				margin-top: calc(45px - 10px);
-				@media (max-width: $tablet-breakpoint) {
-					width: 44%;
-					padding: 25px 100px;
+				margin-top: 87px;
+				@media screen and (max-width: 1024px) {
+					margin-top: 62px;
 				}
-				@media (max-width: $mobile-breakpoint) {
-					margin-top: 45px;
+
+				@media screen and (max-width: 564px) {
+					margin-top: 100px;
+				}
+			}
+		}
+
+		.dates {
+			max-width: 1170px;
+			width: 100%;
+			margin: 0 auto;
+			box-sizing: border-box;
+			margin-top: 287px;
+			padding: 0 2.3%;
+			display: grid;
+			grid-template-columns: 270px 270px 270px 270px;
+			justify-items: center;
+			gap: 0 30px;
+
+			@media screen and (max-width: 1600px) {
+				display: flex;
+				flex-direction: column;
+			}
+
+			@media screen and (max-width: 1024px) {
+				margin-top: 238px;
+			}
+
+			@media screen and (max-width: 564px) {
+				margin-top: 150px;
+			}
+
+			.dateContainer {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				.fullDate {
+					display: flex;
+					margin: 0 auto;
+					margin-bottom: 42px;
+
+					@media screen and (max-width: 1600px) {
+						margin: 0;
+						margin-bottom: 42px;
+					}
+					@media screen and (max-width: 1024px) {
+						margin-bottom: 22px;
+						margin: 0 auto;
+						margin-bottom: 10px;
+					}
+
+					.date {
+						margin: 0;
+						font-family: 'AKONY';
+						font-size: 20px;
+						font-style: normal;
+						font-weight: 700;
+						line-height: 108%;
+
+						@media screen and (max-width: 564px) {
+							font-size: 20px;
+						}
+					}
+					.time {
+						color: #f90;
+						margin-left: 2%;
+					}
+				}
+
+				.event {
 					width: 100%;
-					align-self: center;
-					padding: 25px 55px;
+					height: 100px;
+					box-sizing: border-box;
+					padding: 20px 50px;
+					border-radius: 20px;
+					background-color: rgba(0, 0, 0, 0.3);
+					backdrop-filter: blur(25px);
+					display: flex;
+					position: relative;
+
+					@media screen and (max-width: 1600px) {
+						margin-top: 0px !important;
+					}
+
+					@media screen and (max-width: 564px) {
+						height: 72px;
+						padding: 18px;
+					}
+
+					&Stage {
+						margin: auto auto;
+						font-size: 20px;
+						text-align: center;
+						text-wrap: wrap;
+						font-family: Inter;
+						@media screen and (max-width: 1600px) {
+							font-size: 28px;
+						}
+
+						@media screen and (max-width: 564px) {
+							font-size: 18px;
+						}
+					}
+					.arrow-icon {
+						width: 170px;
+						position: absolute;
+						right: -170px;
+						top: 50%;
+
+						&-hidden {
+							display: none;
+						}
+
+						@media screen and (max-width: 1600px) {
+							display: none;
+						}
+					}
+				}
+
+				.arrow-down {
+					display: none;
+					@media screen and (max-width: 1600px) {
+						display: block;
+						width: 21px;
+						height: 85.5px;
+						margin-top: 20px;
+						margin-bottom: 20px;
+					}
+
+					@media screen and (max-width: 768px) {
+						width: 14px;
+						height: 57px;
+					}
+
+					@media screen and (max-width: 564px) {
+						margin: 0 auto;
+						margin-top: 20px;
+						margin-bottom: 20px;
+					}
+
+					&-hidden {
+						display: none;
+					}
 				}
 			}
 		}
@@ -196,9 +496,11 @@
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			align-items: center;
+			flex-direction: column;
 			width: 100%;
 			padding: 0;
 			margin: 45px 0 0 0;
+			gap: 20px;
 			@media (min-width: calc($mobile-breakpoint + 1px)) {
 				display: none;
 				margin: 0;

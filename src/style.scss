@@ -14,6 +14,11 @@
 	font-display: swap;
 }
 @font-face {
+	font-family: 'AKONY';
+	src: url('fonts/Akony/AKONY.otf');
+	font-display: swap;
+}
+@font-face {
 	font-family: 'Inter';
 	font-weight: 400;
 	src: url('fonts/Inter/Inter-Regular.ttf');
@@ -71,13 +76,14 @@
 	animation: flyReverse 40s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 	@media (max-width: 800px) {
 		max-width: 50%;
-		animation: flyReverseMobile 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+		animation: flyReverseMobile 16s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+			infinite;
 	}
 }
 
 .orbs > svg:nth-child(3n - 1) {
 	max-width: 15%;
-	filter: blur(5px) grayscale(1);
+	filter: blur(10px);
 }
 
 .orbs > svg:nth-child(3n - 2) {
@@ -89,9 +95,9 @@
 	max-width: 60%;
 	filter: blur(0) grayscale(0);
 }
-.orbs > svg:nth-child(5n-1) {
-	filter: grayscale(1);
-}
+// .orbs > svg:nth-child(5n-1) {
+// 	filter: hue-rotate(58deg);
+// }
 
 .orbs > svg:nth-child(3n) {
 	animation-delay: -7s;
@@ -137,6 +143,7 @@
 /* Default layout settings*/
 * {
 	color: white;
+	font-family: 'AKONY';
 }
 
 html {
@@ -150,7 +157,7 @@ body {
 	width: 100%;
 	//max-width: 1600px;
 	font-family: Inter;
-	background: #1e1e1e;
+	background: #151515;
 	overflow-x: hidden;
 	height: 100%;
 }
@@ -187,30 +194,25 @@ span.button {
 	font-size: 24px;
 	line-height: 29px;
 	color: white;
-	background: linear-gradient(267.24deg, rgba(242, 242, 242, 0.25) 22.52%, rgba(242, 242, 242, 0.05) 83.16%),
-		#0077ff;
-	box-shadow: 0px 4px 15px rgba(0, 119, 255, 0.5);
 	border-radius: 20px;
+	background: linear-gradient(
+			267deg,
+			rgba(242, 242, 242, 0.25) 22.52%,
+			rgba(242, 242, 242, 0.05) 83.16%
+		),
+		#f90;
+	box-shadow: 0px 4px 15px 0px rgba(255, 153, 0, 0.5);
 	transition: box-shadow 0.2s;
 	&:hover {
 		box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
 		color: white;
 	}
-	@media (max-width: $mobile-breakpoint) {
-		padding: 20px 50px;
-		text-align: center;
-		line-height: 22px;
+
+	@media screen and (max-width: 564px) {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 20px 5px;
 		font-size: 18px;
-		max-width: max-content;
-		max-height: 72px;
-		&:hover {
-			background: linear-gradient(
-					267.24deg,
-					rgba(242, 242, 242, 0.25) 22.52%,
-					rgba(242, 242, 242, 0.05) 83.16%
-				),
-				#0c60be;
-		}
 	}
 }
 
@@ -223,10 +225,10 @@ a {
 	text-decoration: none;
 	transition: color 0.2s;
 	&:hover {
-		color: #3191ff;
+		color: #ffad31;
 	}
 	&:active {
-		color: #0265d7;
+		color: #ffad31;
 	}
 	/*&:visited {
 		color: #0077ff;
@@ -240,13 +242,25 @@ a {
 		&:hover {
 			filter: grayscale(0);
 		}
-	}
-	&.mirea {
-		transition: filter 0.2s;
-		filter: grayscale(1);
-		&:hover {
+
+		@media screen and (max-width: 1024px) {
 			filter: grayscale(0);
 		}
+	}
+	&.mirea {
+		transition: opacity 0.2s;
+		opacity: 0.7;
+		&:hover {
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 1024px) {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (max-width: 564px) {
+		transform: scale(0.75) translateY(0);
 	}
 }
 
@@ -260,18 +274,20 @@ a {
 h1,
 h2 {
 	font-family: Furore;
-	font-weight: 400;
 	letter-spacing: 0em;
-	font-size: 108px;
-	line-height: 108px;
+	font-family: 'AKONY';
+	font-size: 70px;
+	font-weight: 700;
+	line-height: 100%;
 	text-align: left;
 	position: relative;
 	color: transparent;
-	-webkit-text-stroke: 1px #0077ff;
+	// -webkit-text-stroke: 1px #0077ff;
+	text-shadow: 10px 10px 20px rgba(255, 153, 0, 0.4);
 	//text-shadow: -1px 1px 0 #0077ff, 1px 1px 0 #0077ff, 1px -1px 0 #0077ff, -1px -1px 0 #0077ff;
 	margin: 0;
-	padding-top: 10px;
-	padding-left: 10px;
+	padding-top: 0px;
+	padding-left: 0px;
 	&:hover {
 		cursor: default;
 	}
@@ -282,19 +298,24 @@ h2 {
 		left: 0;
 		color: white;
 		-webkit-text-stroke: 0;
+
+		@media screen and (max-width: 564px) {
+			top: 5px;
+			transform: translateX(18px);
+		}
 	}
 }
 
 h2 {
-	margin: 200px 0 100px 0;
-	@media (max-width: $tablet-breakpoint) {
-		font-size: 68px;
-		margin: 150px 0 60px 0;
-	}
-	@media (max-width: $mobile-breakpoint) {
-		margin: 100px 0 60px 0;
+	margin: 254px 0 60px 0;
+	@media (max-width: 1024px) {
 		font-size: 36px;
-		line-height: 36px;
+		margin: 210px 0 40px 0;
+	}
+	@media (max-width: 564px) {
+		margin: 120px 0 34px 0;
+		font-size: 20px;
+		line-height: 108%;
 	}
 }
 

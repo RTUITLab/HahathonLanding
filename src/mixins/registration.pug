@@ -2,42 +2,72 @@
 h2.text__header Регистрация
 section#registration-section
   div.image-wrapper
-    img(src="assets/form_image.webp" height="1379" width="255" alt="Иллюстрация для формы")
+    img(src="assets/aside_form_image1.svg" height="1379" width="255" alt="Иллюстрация для формы")
   form#register(name="form")
     h3 Заполните форму и укажите всех участников
     input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
+    input(type="number" id="team-length" placeholder="Количество участников *" min="2" max="5" required data-error="Количество участников должно быть от 2 до 5")
 
-    h3
+    h3#form-person
       label(for="memeber-1") Участник №1
         input(type="text" id="memeber-1" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 1 участника")
       input(type="email" id="memeber-1-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 1 участника")
       input(type="text" id="memeber-1-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 1 участника")
-      input(type="text" id="memeber-1-institute" placeholder="Институт*" minlength="2" required data-error="Необходимо указать институт 1 участника")
-      input(type="number" id="memeber-1-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст 1 участника")
+      input(type="text" id="memeber-1-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 1 участника")
+      input(type="text" id="memeber-1-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 1 участника")
+      input(type="number" id="memeber-1-age" placeholder="Возраст*" minlength="2" min="18" max="25" required data-error="Необходимо указать возраст 1 участника")
 
-    h3
+    h3#form-person
       label(for="memeber-2") Участник №2
         input(type="text" id="memeber-2" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 2 участника")
       input(type="email" id="memeber-2-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 2 участника")
       input(type="text" id="memeber-2-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 2 участника")
-      input(type="text" id="memeber-2-institute" placeholder="Институт*" minlength="2" required data-error="Необходимо указать институт 2 участника")
-      input(type="number" id="memeber-2-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст 2 участника")
+      input(type="text" id="memeber-2-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 2 участника")
+      input(type="text" id="memeber-2-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 2 участника")
+      input(type="number" id="memeber-2-age" placeholder="Возраст*" minlength="2" min="18" max="25" required data-error="Необходимо указать возраст 2 участника")
+
+    h3.hidden#form-person
+      label(for="memeber-3") Участник №3
+        input(type="text" id="memeber-3" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 3 участника")
+      input(type="email" id="memeber-3-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 3 участника")
+      input(type="text" id="memeber-3-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 3 участника")
+      input(type="text" id="memeber-3-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 3 участника")
+      input(type="text" id="memeber-3-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 3 участника")
+      input(type="number" id="memeber-3-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 3 участника")
+
+    h3.hidden#form-person
+      label(for="memeber-4") Участник №4
+        input(type="text" id="memeber-4" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 4 участника")
+      input(type="email" id="memeber-4-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 4 участника")
+      input(type="text" id="memeber-4-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 4 участника")
+      input(type="text" id="memeber-4-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 4 участника")
+      input(type="text" id="memeber-4-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 4 участника")
+      input(type="number" id="memeber-4-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 4 участника")
+
+    h3.hidden#form-person
+      label(for="memeber-5") Участник №5
+        input(type="text" id="memeber-5" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 5 участника")
+      input(type="email" id="memeber-5-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 5 участника")
+      input(type="text" id="memeber-5-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 5 участника")
+      input(type="text" id="memeber-5-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 5 участника")
+      input(type="text" id="memeber-5-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 5 участника")
+      input(type="number" id="memeber-5-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 5 участника")
     
     h3
       label Выбранный трек
     .radios
       label.radio(for="task1")
         input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
-        span.checkmark Кейс от института ИТ
+        span.checkmark Кейс AR-игра
       label.radio(for="task2")
         input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
-        span.checkmark Кейс от VK
+        span.checkmark Кейс AR-приложение 
 
     p.error#error__reg 
 
-    button.button.g-recaptcha(type="submit" id="form-submit" data-size="invisible" data-theme="dark" data-sitekey="6LcJ5YgiAAAAAFo58S7Y8br37RzRwT41IUDE764Y" data-callback="onSubmit") Отправить заявку
+    button.button.g-recaptcha(type="submit" id="form-submit" data-size="invisible" data-theme="dark" data-sitekey="6LfCB14lAAAAAGBpaW5w4hgPn25G42lSN4t3aFhv" data-action='submit' data-callback="onSubmit") Отправить заявку
   p#policy
     | Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с 
     a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank" rel="noopener noreferrer") Политикой конфиденциальности
     | , а также с 
-    a(href="https://storage.yandexcloud.net/hahaton/Положение_CreativeHack_подписанное.pdf" target="_blank" rel="noopener noreferrer") Положением Хакатона
+    a(href="https://storage.yandexcloud.net/hahaton/Положение1.pdf" target="_blank" rel="noopener noreferrer") Положением Хакатона

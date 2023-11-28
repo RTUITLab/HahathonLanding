@@ -8,57 +8,72 @@
 		}
 	}
 	&__content {
+		width: 100%;
 		display: flex;
+		gap: 2.5%;
 		justify-content: center;
-		align-items: space-between;
-		gap: 30px;
-		@media (max-width: $tablet-breakpoint) {
+
+		@media (max-width: 1024px) {
 			flex-direction: column;
 			width: 100%;
 			align-items: center;
+			gap: 30px;
+		}
+
+		@media (max-width: 564px) {
+			gap: 20px;
 		}
 		.prise-block {
-			width: calc(100% / 3 - (30px * 2));
+			box-sizing: border-box;
+			width: 31%;
+			aspect-ratio: 1/1;
 			padding: 30px;
 			background: rgba(255, 255, 255, 0.05);
 			backdrop-filter: blur(25px);
 			border-radius: 20px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: space-between;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: center;
+			// align-items: space-between;
+			display: grid;
+			grid-template-rows: 60% 40%;
 			transition: box-shadow 0.2s;
 			cursor: default;
+			align-items: center;
 			&:hover {
 				box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
 			}
-			@media (max-width: $tablet-breakpoint) {
-				align-items: center;
-				width: 100%;
-				max-width: 570px;
-				max-height: 300px;
+
+			@media screen and (max-width: 1400px) {
+				width: 40%;
 			}
-			@media (max-width: 905px) {
-				width: calc(100% - 20%);
-				max-width: 300px;
+			@media screen and (max-width: 1024px) {
+				width: 100%;
+				aspect-ratio: unset;
+				padding: 60px 150px 70px 150px;
+			}
+
+			@media (max-width: 564px) {
+				padding: 60px 30px;
 			}
 			.logo {
-				align-self: center;
+				justify-self: center;
+				@media screen and (max-width: 1024px) {
+					width: 150px;
+					height: 150px;
+				}
 			}
 			.description {
-				font-family: Furore;
-				font-size: 28px;
-				font-weight: 400;
-				line-height: 35px;
+				font-family: Inter;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 124%;
 				letter-spacing: 0em;
 				text-align: center;
 				align-self: center;
 				min-height: max-content;
-				@media (max-width: 1200px) {
-					font-size: 24px;
-				}
-				@media (max-width: 1000px) {
-					font-size: 22px;
+				@media screen and (max-width: 1024px) {
+					margin-top: 30px;
 				}
 			}
 		}
