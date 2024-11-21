@@ -171,6 +171,14 @@ function init() {
 		else orb.style.right = Math.random() * maxWidth + 'px';
 		orb.style.width = '1000px';
 	});
+
+	const orbsBlue = document.querySelectorAll('#threeOrb');
+	orbsBlue.forEach((orb, i) => {
+		orb.style.top = Math.random() * maxHeight + 'px';
+		if (i % 2 == 0) orb.style.left = (Math.random() * maxWidth) / 2 + 'px';
+		else orb.style.right = Math.random() * maxWidth + 'px';
+		orb.style.width = '650px';
+	});
 }
 
 document.addEventListener('DOMContentLoaded', init);

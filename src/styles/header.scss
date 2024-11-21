@@ -313,7 +313,7 @@
 
 				.fullDate {
 					display: flex;
-					margin: 0 auto;
+					margin: 0 42px;
 					margin-bottom: 42px;
 
 					@media screen and (max-width: 1600px) {
@@ -339,7 +339,7 @@
 						}
 					}
 					.time {
-						color: #f90;
+						color: #0077ff;
 						margin-left: 2%;
 					}
 				}

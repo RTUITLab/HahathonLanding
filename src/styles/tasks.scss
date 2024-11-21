@@ -3,12 +3,12 @@
 .tasks {
 	&__header {
 		&::after {
-			content: 'Задачи';
+			content: 'Задача';
 		}
 	}
 	&__content {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 20px;
 		width: 100%;
 		@media (max-width: 1150px) {

@@ -1,8 +1,11 @@
 
 h2.text__header Регистрация
 section#registration-section
+
   div.image-wrapper
-    img(src="assets/aside_form_image1.svg" height="1379" width="255" alt="Иллюстрация для формы")
+    img(src="assets/aside_form_image1_2024.svg" height="1379" width="255" alt="Иллюстрация для формы")
+  article
+    h3 Please Stand By
   form#register(name="form")
     h3 Заполните форму и укажите всех участников
     input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
@@ -52,18 +55,15 @@ section#registration-section
       input(type="text" id="memeber-5-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 5 участника")
       input(type="text" id="memeber-5-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 5 участника")
       input(type="number" id="memeber-5-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 5 участника")
-    
+
     h3
       label Выбранный трек
     .radios
       label.radio(for="task1")
         input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
-        span.checkmark Кейс AR-игра
-      label.radio(for="task2")
-        input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
-        span.checkmark Кейс AR-приложение 
+        span.checkmark Кейс игра на Android
 
-    p.error#error__reg 
+    p.error#error__reg
 
     button.button.g-recaptcha(type="submit" id="form-submit" data-size="invisible" data-theme="dark" data-sitekey="6LfCB14lAAAAAGBpaW5w4hgPn25G42lSN4t3aFhv" data-action='submit' data-callback="onSubmit") Отправить заявку
   p#policy
@@ -71,3 +71,4 @@ section#registration-section
     a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank" rel="noopener noreferrer") Политикой конфиденциальности
     | , а также с 
     a(href="https://storage.yandexcloud.net/hahaton/Положение1.pdf" target="_blank" rel="noopener noreferrer") Положением Хакатона
+

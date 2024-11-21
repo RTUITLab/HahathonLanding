@@ -2,21 +2,21 @@
   var curriculums_data = [
   {
     "stage": "Регистрация участников",
-    "date": "27.11-03.12",
+    "date": "18.11-22.11",
     "time" : "",
   },
   {
     "stage": "Публикация заданий",
-    "date": "03.12",
+    "date": "22.11",
     "time": "23:50", 
   },{
     "stage": "Завершение приёма решений",
-    "date": "10.12",
+    "date": "01.12",
     "time": "23:59", 
   },{
     "stage": "Награждение",
-    "date": "15.12",
-    "time": "12:00", 
+    "date": "06.12",
+    "time": "15:00",
   }]
   
 mixin curriculum-block(data)
@@ -27,7 +27,7 @@ mixin curriculum-block(data)
 header.header
   ul.header__navbar
     li
-      a(href="#tasks-section") Задачи
+      a(href="#tasks-section") Задача
     li
       a(href="#prises-section") Призы
     li
@@ -35,8 +35,8 @@ header.header
     li
       a(href="#registration-section") Регистрация
     li
-      a(href="https://t.me/vkrum_2023" target="_blank" rel="noopener noreferrer")
-        img(src="assets/logos/telegram.svg" alt="Телеграм чат"  width="28px" height="24px")
+      a(href="https://t.me/vkrum_2024" target="_blank" rel="noopener noreferrer")
+        img(src="assets/logos/telegram.svg" alt="ВК чат"  width="32px" height="32px")
 
   .header__navbar-mobile
     .hamburger(data-opened='false')
@@ -64,8 +64,8 @@ header.header
           img.icon#header-icon.vk(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width='65px' height='70px') 
       h1.title__header Хакатон
       .subtitle__block
-        p.name VkRuM
-        span.title__date 03.12 — 10.12
+        p.name VKRuM
+        span.title__date 18.11 — 06.12
       .title__icons.title__icons_tablet
         a(href="https://education.vk.company/" target='_blank')
           img.icon#header-icon.vk(src="./assets/logos/VK_Education.svg"  alt="Логотип VK Education" width='200px')

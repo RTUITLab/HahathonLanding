@@ -1,22 +1,23 @@
 -
-  var blueOrbs = new Array(11)
-  var orangeOrbs = new Array(11)
+  var blueOrbs = new Array(7)
+  var orangeOrbs = new Array(7)
+  var pinkOrbs = new Array(7)
 
 doctype html
 html(lang="ru")
   head
-    title Хакатон 2023
+    title Хакатон 2024
  
     meta(charset="UTF-8")
     meta(name="author" content="RTUITLab")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="description" content="Хакатон 2023 - хакатон от РТУ МИРЭА и VK.")
+    meta(name="description" content="Хакатон 2024 - хакатон от РТУ МИРЭА и VK.")
     meta(name="keywords" content="Хакатон, РТУ МИРЭА, VK, ВКонтакте, VK Play, VK Образование, Разработка игр, RuStore, VK Education.")
 
-    meta(property="og:title" content="Хакатон 2023")
-    meta(property="og:description" content="Хакатон 2023 - хакатон от РТУ МИРЭА, VK Education, VK Play и RuStore.")
+    meta(property="og:title" content="Хакатон 2024")
+    meta(property="og:description" content="Хакатон 2024 - хакатон от РТУ МИРЭА, VK Education, VK Play и RuStore.")
     meta(property="og:url" content="https://hack.rtuitlab.dev")
-    meta(property="og:site_name" content="Хакатон 2023")
+    meta(property="og:site_name" content="Хакатон 2024")
     meta(property="og:image" content="https://hack.rtuitlab.dev/og_image.png")
     meta(property="og:image:width" content="706")
     meta(property="og:image:width" content="425")
@@ -75,6 +76,8 @@ html(lang="ru")
         include assets/orbs/orb1.svg
       each val in orangeOrbs
         include assets/orbs/orb2.svg
+      each val in pinkOrbs
+        include assets/orbs/orb3.svg
 
     script(src="https://www.google.com/recaptcha/api.js" async defer)
     script(src="./main.js" type="module")
