@@ -5,8 +5,8 @@
     "org1": "VK Education,",
     "org2": "VK Play и",
     "org3": "RuStore",
-    "description": "Разработка игры для мобильного устройства с операционной системой Android.",
-    "radioId": "task1"
+    "description": "Разработка игры для мобильного устройства с операционной системой Android.\n\nМобильная игра на Android в жанре «Разрушь замок»",
+    "radioId": "#registration-section"
   }]
 
 mixin task(data)
@@ -19,11 +19,11 @@ mixin task(data)
       p.description
         = data.description
     div
-      label(for=data.radioId)
-        span.button.taskButton Выбрать кейс
+      a(href=data.radioId)
+        span.button.taskButton Подробнее
 
 section.tasks#tasks-section
-  h2.tasks__header Задача
+  h2.tasks__header Кейс
   .tasks__content
     each singleTask in tasks_data
       +task(singleTask)

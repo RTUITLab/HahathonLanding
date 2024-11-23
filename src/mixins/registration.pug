@@ -1,74 +1,196 @@
+-
+  var task_data = [{
+    description: {
+      text: "Придумайте и разработайте мобильную игру для Android в жанре <span>Разрушить замок</span>. Основная цель - создать проект, который сохраняет дух жанра, но добавляет необычные механики и идеи.\n\nМы приветствуем эксперименты с технологиями, будь то использование гироскопа, AR/VR, внедрение мультиплеера или оригинальных социальных взаимодействий.",
+      explanation1: "Вы сами выбираете инструменты и технологии разработки - полный простор для креатива!",
+      explanation2: "Игровая сессия не должна превышать 15 минут, чтобы игра оставалась динамичной и увлекательной.",
+      explanation3: "Разрешается использовать сторонние ассеты только при условии, что они находятся в открытом доступе и соответствуют условиям свободного использования.",
+      explanation4: "Финальная версия должна быть представлена в формате АРК и запускаться на Android-устройствах.",
+    },
+    genre: {
+      text: "Игры в жанре <span>Разрушить замок</span> - это аркады, где игроку предлагается разрушить сооружения, используя различные устройства, такие как катапульты, пушки или арбалеты. Успех зависит от правильного расчёта силы и траектории удара.\n\nИзвестными представителями этого жанра являются <span>Angry Birds</span> и <span>Crash the Castles</span>.",
+      element1: "<span>Ограниченные ресурсы</span> - определённое число попыток или снарядов.",
+      element2: "<span>Физика разрушений</span> - убедительные и зрелищные столкновения и падения.",
+      element3: "<span>Стратегия и зрелищность</span> - игра приносит удовольствие и заставляет выстраивать стратегию разрушений.",
+    },
+    order: {
+      text: "Сдача решений происходит через форму, опубликованную в официальном чате <a target='_blank' href='https://t.me/vkrum_2024'>vkrum_2024</a> и отправленную на почту капитанам команд.\n\nИгровые проекты и сопровождающие материалы загружаются в виде ссылок на папку в облаке.",
+      element1: "Видео демонстрации игры (3-6 минут), где будет показан геймплей и ключевые механики.",
+      element2: "Видеопрезентация защиты проекта. Рассказ про идею, технические особенности и т.д.",
+      element3: "Ссылку на репозиторий с исходным кодом",
+      element4: "Игровой билд в формате APK",
+    },
+    estimation: {
+      element1: {
+        number: "(0-2)",
+        text: "Соответствие жанру"
+      },
+      element2: {
+        number: "(0-10)",
+        text: "Уникальность идеи"
+      },
+      element3: {
+        number: "(0-2)",
+        text: "Проработка геймплея и механик"
+      },
+      element4: {
+        number: "(0-2)",
+        text: "Звуковое сопровождение"
+      },
+      element5: {
+        number: "(0-2)",
+        text: "Визуальный стиль"
+      },
+      element6: {
+        number: "(0-2)",
+        text: "Социальные механики"
+      },
+      element7: {
+        number: "(0-2)",
+        text: "Игровой интерфейс"
+      },
+      element8: {
+        number: "(1-3)",
+        text: "Наличие мультиплеера"
+      },
+      element9: {
+        number: "(0-2)",
+        text: "Использование гироскопа/акселерометра"
+      },
+      element10: {
+        number: "(1-3)",
+        text: "Использование виртуального пространства"
+      },
+    }
+  }]
 
-h2.text__header Регистрация
+mixin task-block(data)
+  .description-block
+    h3.task__block__header Постановка задачи
+
+    .description__task__block
+      .description__task__block__one
+        .block__blue
+          p Описание
+        .block__text
+          p.description !{data.description.text}
+      .description__task__block__two
+        .pc__adaptive
+          .column1
+            .block__text
+              .block__blue__mini 01
+              p.description= data.description.explanation1
+            .block__text
+              .block__blue__mini 03
+              p.description= data.description.explanation3
+          .column2
+            .block__text
+              .block__blue__mini 02
+              p.description= data.description.explanation2
+            .block__text
+              .block__blue__mini 04
+              p.description= data.description.explanation4
+        .mobile__adaptive
+          .column1
+            .block__text
+              .block__blue__mini 01
+              p.description= data.description.explanation1
+            .block__text
+              .block__blue__mini 02
+              p.description= data.description.explanation2
+            .block__text
+              .block__blue__mini 03
+              p.description= data.description.explanation3
+            .block__text
+              .block__blue__mini 04
+              p.description= data.description.explanation4
+
+    h3.genre__block__header Больше о жанре
+
+    .description__genre__block
+      .description__genre__block__one
+        .block__text
+          p.description !{data.genre.text}
+      .description__genre__block__two
+        .block__blue
+          p Ключевые элементы
+        .block__text
+          .block__blue__mini 01
+          p.description !{data.genre.element1}
+        .block__text
+          .block__blue__mini 02
+          p.description !{data.genre.element2}
+        .block__text
+          .block__blue__mini 03
+          p.description !{data.genre.element3}
+
+    h3.order__block__header Порядок сдачи работ
+
+    .description__order__block
+      .description__order__block__one
+        .block__text
+          p.description !{data.order.text}
+        .block__blue__center
+          p Проверьте доступ к файлам перед указанием ссылок
+      .description__order__block__two
+        .block__text
+          .block__blue__mini 01
+          p.description= data.order.element1
+        .block__text
+          .block__blue__mini 02
+          p.description= data.order.element2
+        .block__text
+          .block__blue__mini 03
+          p.description= data.order.element3
+        .block__text
+          .block__blue__mini 04
+          p.description= data.order.element4
+
+    h3.estimation__block__header Оценка проектов
+
+    .description__estimation__block
+      .estimation__block
+        p.description= data.estimation.element1.text
+        h4.description= data.estimation.element1.number
+      .estimation__block
+        p.description= data.estimation.element2.text
+        h4.description= data.estimation.element2.number
+      .estimation__block
+        p.description= data.estimation.element3.text
+        h4.description= data.estimation.element3.number
+      .estimation__block
+        p.description= data.estimation.element4.text
+        h4.description= data.estimation.element4.number
+      .estimation__block
+        p.description= data.estimation.element5.text
+        h4.description= data.estimation.element5.number
+      .estimation__block
+        p.description= data.estimation.element6.text
+        h4.description= data.estimation.element6.number
+      .estimation__block
+        p.description= data.estimation.element7.text
+        h4.description= data.estimation.element7.number
+      .estimation__block
+        p.description= data.estimation.element8.text
+        h4.description= data.estimation.element8.number
+      .estimation__block
+        p.description= data.estimation.element9.text
+        h4.description= data.estimation.element9.number
+      .estimation__block
+        p.description= data.estimation.element10.text
+        h4.description= data.estimation.element10.number
+
+h2.text__header Задание
 section#registration-section
 
-  div.image-wrapper
-    img(src="assets/aside_form_image1_2024.svg" height="1379" width="255" alt="Иллюстрация для формы")
-  article
-    h3 Please Stand By
+  .task__detailed__content
+    each task in task_data
+      +task-block(task)
+
   form#register(name="form")
     h3 Заполните форму и укажите всех участников
     input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
     input(type="number" id="team-length" placeholder="Количество участников *" min="2" max="5" required data-error="Количество участников должно быть от 2 до 5")
 
-    h3#form-person
-      label(for="memeber-1") Участник №1
-        input(type="text" id="memeber-1" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 1 участника")
-      input(type="email" id="memeber-1-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 1 участника")
-      input(type="text" id="memeber-1-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 1 участника")
-      input(type="text" id="memeber-1-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 1 участника")
-      input(type="text" id="memeber-1-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 1 участника")
-      input(type="number" id="memeber-1-age" placeholder="Возраст*" minlength="2" min="18" max="25" required data-error="Необходимо указать возраст 1 участника")
-
-    h3#form-person
-      label(for="memeber-2") Участник №2
-        input(type="text" id="memeber-2" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 2 участника")
-      input(type="email" id="memeber-2-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 2 участника")
-      input(type="text" id="memeber-2-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 2 участника")
-      input(type="text" id="memeber-2-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 2 участника")
-      input(type="text" id="memeber-2-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 2 участника")
-      input(type="number" id="memeber-2-age" placeholder="Возраст*" minlength="2" min="18" max="25" required data-error="Необходимо указать возраст 2 участника")
-
-    h3.hidden#form-person
-      label(for="memeber-3") Участник №3
-        input(type="text" id="memeber-3" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 3 участника")
-      input(type="email" id="memeber-3-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 3 участника")
-      input(type="text" id="memeber-3-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 3 участника")
-      input(type="text" id="memeber-3-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 3 участника")
-      input(type="text" id="memeber-3-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 3 участника")
-      input(type="number" id="memeber-3-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 3 участника")
-
-    h3.hidden#form-person
-      label(for="memeber-4") Участник №4
-        input(type="text" id="memeber-4" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 4 участника")
-      input(type="email" id="memeber-4-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 4 участника")
-      input(type="text" id="memeber-4-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 4 участника")
-      input(type="text" id="memeber-4-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 4 участника")
-      input(type="text" id="memeber-4-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 4 участника")
-      input(type="number" id="memeber-4-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 4 участника")
-
-    h3.hidden#form-person
-      label(for="memeber-5") Участник №5
-        input(type="text" id="memeber-5" placeholder="ФИО*" minlength="10" data-error="Необходимо указать ФИО 5 участника")
-      input(type="email" id="memeber-5-email" placeholder="E-mail*" minlength="6" data-error="Необходимо указать почту 5 участника")
-      input(type="text" id="memeber-5-telegram" placeholder="Telegram*" minlength="3" data-error="Необходимо указать телеграм 5 участника")
-      input(type="text" id="memeber-5-univer" placeholder="Университет*" minlength="2" required data-error="Необходимо указать Университет 5 участника")
-      input(type="text" id="memeber-5-institute" placeholder="Институт/Факультет" minlength="2" data-error="Необходимо указать Институт/Факультет 5 участника")
-      input(type="number" id="memeber-5-age" placeholder="Возраст*" minlength="2" min="18" max="25" data-error="Необходимо указать возраст 5 участника")
-
-    h3
-      label Выбранный трек
-    .radios
-      label.radio(for="task1")
-        input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
-        span.checkmark Кейс игра на Android
-
-    p.error#error__reg
-
     button.button.g-recaptcha(type="submit" id="form-submit" data-size="invisible" data-theme="dark" data-sitekey="6LfCB14lAAAAAGBpaW5w4hgPn25G42lSN4t3aFhv" data-action='submit' data-callback="onSubmit") Отправить заявку
-  p#policy
-    | Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с 
-    a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank" rel="noopener noreferrer") Политикой конфиденциальности
-    | , а также с 
-    a(href="https://storage.yandexcloud.net/hahaton/Положение1.pdf" target="_blank" rel="noopener noreferrer") Положением Хакатона
 

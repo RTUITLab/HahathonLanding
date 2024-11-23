@@ -3,7 +3,7 @@
 .tasks {
 	&__header {
 		&::after {
-			content: 'Задача';
+			content: 'Кейс';
 		}
 	}
 	&__content {
@@ -24,37 +24,37 @@
 			border-radius: 20px;
 			padding: 40px;
 			width: calc(50% - 20px);
-			height: 515px;
+			height: 615px;
 			justify-content: space-between;
 
 			@media screen and (max-width: 1370px) {
-				height: 615px;
+				height: 715px;
 			}
 
 			@media screen and (max-width: 1160px) {
-				height: 650px;
+				height: 750px;
 			}
 
 			@media screen and (max-width: 1150px) {
 				width: 100%;
-				height: 400px;
+				height: 500px;
 				padding: 30px;
 			}
 
 			@media screen and (max-width: 790px) {
-				height: 500px;
-			}
-
-			@media screen and (max-width: 610px) {
 				height: 600px;
 			}
 
+			@media screen and (max-width: 610px) {
+				height: 700px;
+			}
+
 			@media screen and (max-width: 564px) {
-				height: 300px;
+				height: 400px;
 			}
 
 			@media screen and (max-width: 475px) {
-				height: 450px;
+				height: 550px;
 			}
 			.title {
 				margin: 0;
@@ -80,6 +80,7 @@
 				max-width: 100%;
 				align-self: start;
 				margin-top: 30px;
+				white-space: pre-line;
 
 				@media screen and (max-width: 1150px) {
 					margin-top: 30px;

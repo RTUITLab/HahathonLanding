@@ -1,0 +1,174 @@
+-
+    var task_data = [{
+        description: {
+            text: "Придумайте и разработайте мобильную игру для Android в жанре <span>Разрушить замок</span>. Основная цель - создать проект, который сохраняет дух жанра, но добавляет необычные механики и идеи.\n\nМы приветствуем эксперименты с технологиями, будь то использование гироскопа, AR/VR, внедрение мультиплеера или оригинальных социальных взаимодействий.",
+            explanation1: "Вы сами выбираете инструменты и технологии разработки - полный простор для креатива!",
+            explanation2: "Игровая сессия не должна превышать 15 минут, чтобы игра оставалась динамичной и увлекательной.",
+            explanation3: "Разрешается использовать сторонние ассеты только при условии, что они находятся в открытом доступе и соответствуют условиям свободного использования.",
+            explanation4: "Финальная версия должна быть представлена в формате АРК и запускаться на Android-устройствах.",
+        },
+        genre: {
+            text: "Игры в жанре <span>Разрушить замок</span> - это аркады, где игроку предлагается разрушить сооружения, используя различные устройства, такие как катапульты, пушки или арбалеты. Успех зависит от правильного расчёта силы и траектории удара.\n\nИзвестными представителями этого жанра являются <span>Angry Birds</span> и <span>Crash the Castles</span>.",
+            element1: "<span>Ограниченные ресурсы</span> - определённое число попыток или снарядов.",
+            element2: "<span>Физика разрушений</span> - убедительные и зрелищные столкновения и падения.",
+            element3: "<span>Стратегия и зрелищность</span> - игра приносит удовольствие и заставляет выстраивать стратегию разрушений.",
+        },
+        order: {
+            text: "Сдача решений происходит через форму, опубликованную в официальном чате <a target='_blank' href='https://t.me/vkrum_2024'>vkrum_2024</a> и отправленную на почту капитанам команд.\n\nИгровые проекты и сопровождающие материалы загружаются в виде ссылок на папку в облаке.",
+            element1: "Видео демонстрации игры (3-6 минут), где будет показан геймплей и ключевые механики.",
+            element2: "Видеопрезентация защиты проекта. Рассказ про идею, технические особенности и т.д.",
+            element3: "Ссылку на репозиторий с исходным кодом",
+            element4: "Игровой билд в формате APK",
+        },
+        estimation: {
+            element1: {
+                number: "(0-2)",
+                text: "Соответствие жанру"
+            },
+            element2: {
+                number: "(0-10)",
+                text: "Уникальность идеи"
+            },
+            element3: {
+                number: "(0-2)",
+                text: "Проработка геймплея и механик"
+            },
+            element4: {
+                number: "(0-2)",
+                text: "Звуковое сопровождение"
+            },
+            element5: {
+                number: "(0-2)",
+                text: "Визуальный стиль"
+            },
+            element6: {
+                number: "(0-2)",
+                text: "Социальные механики"
+            },
+            element7: {
+                number: "(0-2)",
+                text: "Игровой интерфейс"
+            },
+            element8: {
+                number: "(1-3)",
+                text: "Наличие мультиплеера"
+            },
+            element9: {
+                number: "(0-2)",
+                text: "Использование гироскопа/акселерометра"
+            },
+            element10: {
+                number: "(1-3)",
+                text: "Использование виртуального пространства"
+            },
+        }
+    }]
+
+mixin task-block(data)
+    .description-block
+        h3.task__block__header Постановка задачи
+
+        .description__task__block
+            .description__task__block__one
+                .block__blue
+                    p Описание
+                .block__text
+                    p = data.description.text
+            .description__task__block__two
+                .block__text
+                    .block__blue__mini 01
+                    p = data.description.explanation1
+                .block__text
+                    .block__blue__mini 02
+                    p = data.description.explanation2
+                .block__text
+                    .block__blue__mini 03
+                    p = data.description.explanation3
+                .block__text
+                    .block__blue__mini 04
+                    p = data.description.explanation4
+
+        h3.genre__block__header Больше о жанре
+
+        .description__genre__block
+            .description__genre__block__one
+                .block__text
+                    p = data.genre.text
+            .description__order__block__two
+                .block__blue
+                    p Ключевые элементы
+                .block__text
+                    .block__blue__mini 01
+                     p = data.genre.element1
+                .block__text
+                    .block__blue__mini 02
+                    p = data.genre.element2
+                .block__text
+                    .block__blue__mini 03
+                    p = data.genre.element3
+
+        h3.order__block__header Порядок сдачи работ
+
+        .description__order__block
+            .description__order__block__one
+                .block__text
+                    p = data.order.text
+                .block__blue__center
+                    p Проверьте доступ к файлам перед указанием ссылок
+            .description__order__block__two
+                .block__text
+                    .block__blue__mini 01
+                    p = data.order.element1
+                .block__text
+                    .block__blue__mini 02
+                    p = data.order.element2
+                .block__text
+                    .block__blue__mini 03
+                    p = data.order.element3
+                .block__text
+                    .block__blue__mini 04
+                    p = data.order.element4
+
+        h3.estimation__block__header Оценка проектов
+
+        .description__estimation__block
+            .estimation__block
+                p = data.estimation.element1.text
+                h4 = data.estimation.element1.number
+            .estimation__block
+                p = data.estimation.element2.text
+                h4 = data.estimation.element2.number
+            .estimation__block
+                p = data.estimation.element3.text
+                h4 = data.estimation.element3.number
+            .estimation__block
+                p = data.estimation.element4.text
+                h4 = data.estimation.element4.number
+            .estimation__block
+                p = data.estimation.element5.text
+                h4 = data.estimation.element5.number
+            .estimation__block
+                p = data.estimation.element6.text
+                h4 = data.estimation.element6.number
+            .estimation__block
+                p = data.estimation.element7.text
+                h4 = data.estimation.element7.number
+            .estimation__block
+                p = data.estimation.element8.text
+                h4 = data.estimation.element8.number
+            .estimation__block
+                p = data.estimation.element9.text
+                h4 = data.estimation.element9.number
+            .estimation__block
+                p = data.estimation.element10.text
+                h4 = data.estimation.element10.number
+
+h2.text__header Задание
+section#registration-section
+
+section.task__detailed#task-detailed-section
+    h2.task__detailed__header Задание
+
+    .task__detailed__content
+        each task in task_data
+            +task-block(task)
