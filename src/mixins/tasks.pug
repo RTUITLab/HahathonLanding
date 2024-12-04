@@ -6,8 +6,46 @@
     "org2": "VK Play и",
     "org3": "RuStore",
     "description": "Разработка игры для мобильного устройства с операционной системой Android.\n\nМобильная игра на Android в жанре «Разрушь замок»",
-    "radioId": "#registration-section"
+    "radioId": "#registration-section",
+    "winners": ["RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst"],
+    "participants": ["RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst"],
   }]
+
+mixin place(title, number, text)
+  .place
+    div
+      h3=number
+      h4 место
+    div
+      span=title
+      p=text
+
+mixin firstplace(title, text)
+  .place
+    div
+      h3.first 1
+      h4.first место
+    div
+      span=title
+      p=text
+
+mixin thirdplace(title, text)
+  .place
+    div
+      h3.third 3
+      h4.third место
+    div
+      span=title
+      p=text
+
+mixin secondplace(title, text)
+  .place
+    div
+      h3.second 2
+      h4.second место
+    div
+      span=title
+      p=text
 
 mixin task(data)
   article.task
@@ -21,9 +59,65 @@ mixin task(data)
     div
       a(href=data.radioId)
         span.button.taskButton Подробнее
+  article.winners
+    div
+      h3.title Победители
+        p.description
+          +firstplace(data.winners[0], "текст")
+          +secondplace(data.winners[1], "текст")
+          +thirdplace(data.winners[2], "текст")
+      div.cont
+        details.accordion_details
+          summary
+            img(src="assets/arrow-down-01-round.svg", alt="")
+            div
+              h3(role="term").title Финалисты
+        div(role="definition").accordion_content
+          div
+            p.description
+            +place(data.winners[3], 4, "текст")
+            +place(data.winners[4], 5, "текст")
+            +place(data.winners[5], 6, "текст")
+            +place(data.winners[6], 7, "текст")
+            +place(data.winners[7], 8, "текст")
+            +place(data.winners[8], 9, "текст")
+            +place(data.winners[9], 10, "текст")
+            +place(data.winners[10], 11, "текст")
+      div.cont
+        details.accordion_details
+          summary
+            img(src="assets/arrow-down-01-round.svg", alt="")
+            div
+              h3(role="term").title Остальные команды
+        div(role="definition").accordion_content
+          div
+            p.description
+            +place(data.participants[0], 12, "текст")
+            +place(data.participants[1], 13, "текст")
+            +place(data.participants[2], 14, "текст")
+            +place(data.participants[3], 15, "текст")
+            +place(data.participants[4], 16, "текст")
+            +place(data.participants[5], 17, "текст")
+            +place(data.participants[6], 18, "текст")
+            +place(data.participants[7], 19, "текст")
+            +place(data.participants[8], 20, "текст")
+            +place(data.participants[9], 21, "текст")
+            +place(data.participants[10], 22, "текст")
+            +place(data.participants[11], 23, "текст")
+            +place(data.participants[12], 24, "текст")
+            +place(data.participants[13], 25, "текст")
+            +place(data.participants[14], 26, "текст")
+            +place(data.participants[15], 27, "текст")
+            +place(data.participants[16], 28, "текст")
+            +place(data.participants[17], 29, "текст")
+            +place(data.participants[18], 30, "текст")
+            +place(data.participants[19], 31, "текст")
+            +place(data.participants[20], 32, "текст")
+    div
+
 
 section.tasks#tasks-section
-  h2.tasks__header Кейс
+  h2.tasks__header Итоги
   .tasks__content
     each singleTask in tasks_data
       +task(singleTask)
