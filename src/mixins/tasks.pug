@@ -7,8 +7,8 @@
     "org3": "RuStore",
     "description": "Разработка игры для мобильного устройства с операционной системой Android.\n\nМобильная игра на Android в жанре «Разрушь замок»",
     "radioId": "#registration-section",
-    "winners": ["RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst"],
-    "participants": ["RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst", "RealityFirst"],
+    "winners": ["Ignis Reges", "ThreeBeersBudget", "Bugs' Creatures", "Future Club", "Akira&Hizaru", "Team Ad Astra", "Капуста лайт", "MyTutRadyDeneg", "DarkLunix", "PerspectiveView", "Адепт"],
+    "participants": ["Parabola TM", "qwerty", "4FUN", "rm -rf /*", "Фортуна", "Компост", "duo-bunnys", "CARP_team", "Код Шрёдингера", "Dapoka", "Androber’s", "FurCode", "Barsuk", "Но как?", "Giga Hamsters", "Рулада", "Daydream", "BackFlipFold", "RealityPirates", "Блёбики", "Ununreal", "ortogon", "Seal Studio", "Source Makers"],
   }]
 
 mixin place(title, number, text)
@@ -38,6 +38,15 @@ mixin thirdplace(title, text)
       span=title
       p=text
 
+mixin fourthplace(title, text)
+  .place
+    div
+      h3.fourth 4
+      h4.fourth место
+    div
+      span=title
+      p !{text}
+
 mixin secondplace(title, text)
   .place
     div
@@ -63,9 +72,10 @@ mixin task(data)
     div
       h3.title Победители
         p.description
-          +firstplace(data.winners[0], "текст")
-          +secondplace(data.winners[1], "текст")
-          +thirdplace(data.winners[2], "текст")
+          +firstplace(data.winners[0], "19,75 баллов")
+          +secondplace(data.winners[1], "18,75 баллов")
+          +thirdplace(data.winners[2], "16,5 баллов")
+          +fourthplace(data.winners[3], "Особая номинация: 'Воля к победе'<br/>15,75 баллов")
       div.cont
         details.accordion_details
           summary
@@ -75,14 +85,13 @@ mixin task(data)
         div(role="definition").accordion_content
           div
             p.description
-            +place(data.winners[3], 4, "текст")
-            +place(data.winners[4], 5, "текст")
-            +place(data.winners[5], 6, "текст")
-            +place(data.winners[6], 7, "текст")
-            +place(data.winners[7], 8, "текст")
-            +place(data.winners[8], 9, "текст")
-            +place(data.winners[9], 10, "текст")
-            +place(data.winners[10], 11, "текст")
+            +place(data.winners[4], 5, "14,5 баллов")
+            +place(data.winners[5], 6, "11 баллов")
+            +place(data.winners[6], 7, "10,75 баллов")
+            +place(data.winners[7], 8, "10,25 баллов")
+            +place(data.winners[8], 9, "9 баллов")
+            +place(data.winners[9], 10, "8,25 баллов")
+            +place(data.winners[10], 11, "6,5 баллов")
       div.cont
         details.accordion_details
           summary
@@ -92,32 +101,35 @@ mixin task(data)
         div(role="definition").accordion_content
           div
             p.description
-            +place(data.participants[0], 12, "текст")
-            +place(data.participants[1], 13, "текст")
-            +place(data.participants[2], 14, "текст")
-            +place(data.participants[3], 15, "текст")
-            +place(data.participants[4], 16, "текст")
-            +place(data.participants[5], 17, "текст")
-            +place(data.participants[6], 18, "текст")
-            +place(data.participants[7], 19, "текст")
-            +place(data.participants[8], 20, "текст")
-            +place(data.participants[9], 21, "текст")
-            +place(data.participants[10], 22, "текст")
-            +place(data.participants[11], 23, "текст")
-            +place(data.participants[12], 24, "текст")
-            +place(data.participants[13], 25, "текст")
-            +place(data.participants[14], 26, "текст")
-            +place(data.participants[15], 27, "текст")
-            +place(data.participants[16], 28, "текст")
-            +place(data.participants[17], 29, "текст")
-            +place(data.participants[18], 30, "текст")
-            +place(data.participants[19], 31, "текст")
-            +place(data.participants[20], 32, "текст")
-    div
+            +place(data.participants[0], 12, "")
+            +place(data.participants[1], 13, "")
+            +place(data.participants[2], 14, "")
+            +place(data.participants[3], 15, "")
+            +place(data.participants[4], 16, "")
+            +place(data.participants[5], 17, "")
+            +place(data.participants[6], 18, "")
+            +place(data.participants[7], 19, "")
+            +place(data.participants[8], 20, "")
+            +place(data.participants[9], 21, "")
+            +place(data.participants[10], 22, "")
+            +place(data.participants[11], 23, "")
+            +place(data.participants[12], 24, "")
+            +place(data.participants[13], 25, "")
+            +place(data.participants[14], 26, "")
+            +place(data.participants[15], 27, "")
+            +place(data.participants[16], 28, "")
+            +place(data.participants[17], 29, "")
+            +place(data.participants[18], 30, "")
+            +place(data.participants[19], 31, "")
+            +place(data.participants[20], 32, "")
+            +place(data.participants[21], 33, "")
+            +place(data.participants[22], 34, "")
+            +place(data.participants[23], 35, "")
 
 
 section.tasks#tasks-section
   h2.tasks__header Итоги
+  iframe.frame(src="https://rutube.ru/play/embed/080981a29a16746771400c6ccbf9ab7a/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
   .tasks__content
     each singleTask in tasks_data
       +task(singleTask)

@@ -7,13 +7,14 @@
 		}
 	}
 	&__content {
-		display: flex;
-		justify-content: flex-start;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
 		gap: 20px;
 		width: 100%;
 		@media (max-width: 1150px) {
-			justify-content: center;
-			flex-direction: column;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
 		}
 		.winners {
 			display: flex;
@@ -23,7 +24,7 @@
 			backdrop-filter: blur(25px);
 			border-radius: 20px;
 			padding: 40px;
-			width: calc(50% - 20px);
+			width: 100%;
 			justify-content: flex-start;
 			@media screen and (max-width: 1150px) {
 				width: 100%;
@@ -190,7 +191,7 @@
 			backdrop-filter: blur(25px);
 			border-radius: 20px;
 			padding: 40px;
-			width: calc(50% - 20px);
+			width: 100%;
 			height: 615px;
 			justify-content: space-between;
 
@@ -293,6 +294,15 @@
 	}
 }
 
+.frame
+{
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: 24px;
+	margin-bottom: 80px;
+	outline: 1px solid #363636;
+}
+
 .place
 {
 	margin-top: 12px;
@@ -311,7 +321,6 @@
 	> div
 	{
 		width: 100%;
-		flex-shrink: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -377,4 +386,9 @@
 
 .third {
 	color: #F89578;
+}
+
+.fourth
+{
+	color: #398AFF;
 }
